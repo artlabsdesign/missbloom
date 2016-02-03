@@ -1,0 +1,56 @@
+.rcategory_path {position:absolute;right:0;bottom:0;white-space: nowrap;}
+
+.rhtabs {display:block;width:100%;margin:5px 0 15px;}
+.rhtabs a {
+font-family: 'Open Sans';
+border-top: 2px solid #f8f8f8;
+	background: #f8f8f8;
+	padding: 10px 15px 13px 15px;
+	font-size: 14px;
+	text-transform: uppercase;
+	text-align: center;
+	text-decoration: none;
+	margin-right: 2px;
+	display: inline-block;
+	color: #333333;
+
+}
+.rhtabs a.selected,
+.rhtabs a:hover
+ {
+  padding-bottom: 14px;
+  background: #FFFFFF!important;
+  border-top: 2px solid #333333;
+}
+
+div[id^=rcategory] {position:relative;}
+.owl-carousel.box-product > div {margin-right:0;width:100% !important;}
+/* Стили для карусели */
+
+.jcarousel .jcarousel-clip-vertical {max-height: 800px;}
+.jcarousel .jcarousel-container {margin: 20px 0px;}
+.jcarousel .jcarousel-clip {overflow: hidden;}
+.jcarousel .jcarousel-item {text-align: center;/*width:160px;*/}
+.jcarousel .jcarousel-item-vertical {margin-bottom: 10px;}
+
+/**
+ *  Vertical Buttons
+ */
+.jcarousel .jcarousel-next-vertical {
+    position: absolute;
+    top: -25px;
+    left: 60px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(./button-up.png) no-repeat 0 0;
+}
+.jcarousel .jcarousel-prev-vertical {
+    position: absolute;
+    bottom: -40px;
+    left: 65px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(./button-down.png) no-repeat 0 0;
+}

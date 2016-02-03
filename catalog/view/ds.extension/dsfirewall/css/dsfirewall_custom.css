@@ -1,0 +1,72 @@
+.devwebds-notification p {
+margin: 0px;
+padding: 0px;
+}
+.devwebds-notification .ui-dsnotify-text img{
+border: solid 1px rgb(162, 162, 162);
+margin-right: 15px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border-radius: 10px 10px 10px 10px;
+} 
+
+.ui-dsnotify.custom .ui-dsnotify-container {
+	background-color: #404040 !important;
+	background-image: none !important;
+	border: none !important;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.ui-dsnotify.custom .ui-dsnotify-title, .ui-dsnotify.custom .ui-dsnotify-text {
+	font-family: Arial, Helvetica, sans-serif !important;
+	text-shadow: 2px 2px 3px black !important;
+	font-size: 10pt !important;
+	color: #FFF !important;
+	padding-left: 50px !important;
+	line-height: 1 !important;
+	text-rendering: geometricPrecision !important;
+}
+.ui-dsnotify.custom .ui-dsnotify-title {
+	font-weight: bold;
+}
+.ui-dsnotify.custom .ui-dsnotify-icon {
+	float: left;
+}
+.ui-dsnotify.custom .picon {
+	margin: 3px;
+	width: 33px;
+	height: 33px;
+}
+.ui-dsnotify.stack-custom {
+	top: 200px;
+	left: 200px;
+	right: auto;
+}
+.ui-dsnotify.stack-custom2 {
+	top: auto;
+	left: auto;
+	bottom: 200px;
+	right: 200px;
+}
+/*position*/
+.ui-dsnotify.stack-bottomright {
+	right: auto;
+	top: auto;
+	left: auto;
+	bottom: auto;
+}
+
+.ui-dsnotify.stack-bar-top {
+	right: 0;
+	top: 0;
+}
+.ui-dsnotify.stack-bar-bottom {
+	margin-left: 15%;
+	right: auto;
+	bottom: 0;
+	top: auto;
+	left: auto;
+}
+
+.devwebds-notification.stack-bar-top .ui-dsnotify-text{font-size: 18px;}
+.devwebds-notification.stack-bar-top .ui-dsnotify-text a {font-size: 18px;font-style: italic;}

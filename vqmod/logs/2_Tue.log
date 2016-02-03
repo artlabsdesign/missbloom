@@ -1,0 +1,29 @@
+---------- Date: 2016-02-02 18:02:09 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /index.php?route=checkout/cart/add
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\missbloom\vqmod/xml/buy.xml
+   id        : Short checkout
+   version   : 1.5.x
+   vqmver    : 1.0.8
+   author    : ocprofi
+
+File Name    : catalog/controller/checkout/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-02-02 19:45:25 ~ IP : 127.0.0.1 ----------
+REQUEST URI : /design-collection/buketi-komplimenti/glori
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\missbloom\vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+

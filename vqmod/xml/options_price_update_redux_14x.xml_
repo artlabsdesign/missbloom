@@ -1,0 +1,151 @@
+<modification>
+
+	<id>Options Price Update Redux</id>
+	<version>1.0.1</version>
+	<vqmver>2.1.5</vqmver>
+	<author>qphoria</author>
+
+	<file name="catalog/view/theme/*/template/product/product.tpl">
+
+		<operation error="skip"><!-- Fix for shoppica assumption of relative require path -->
+            <search position="replace"><![CDATA[
+            <?php if ($options) require 'product_options.tpl' ?>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <?php if ($options) require('catalog/view/theme/shoppica/template/product/product_options.tpl') ?>
+            ]]></add>
+        </operation>
+	
+		<operation error="skip"><!-- 1.4.x & 1.5.0.5+ only -->
+            <search position="replace"><![CDATA[
+            <?php echo $price; ?>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <span id="opu_price"><?php echo $price; ?></span>
+            ]]></add>
+        </operation>
+		
+		<operation error="skip"><!-- shoppica only -->
+            <search position="replace"><![CDATA[
+            <?php echo s_format($price); ?>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <span id="opu_price"><?php echo s_format($price); ?></span>
+            ]]></add>
+        </operation>
+		
+		<operation error="skip"><!-- shoppica only -->
+            <search position="replace"><![CDATA[
+            <?php echo s_format($special); ?>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <span id="opu_price"><?php echo s_format($special); ?></span>
+            ]]></add>
+        </operation>
+
+        <operation error="skip"><!-- 1.5.0 only -->
+            <search position="replace" index="1"><![CDATA[
+            <span style="text-decoration: line-through;"><?php echo $price; ?></span>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <span id="opu_price" style="text-decoration: line-through;"><?php echo $price; ?></span>
+            ]]></add>
+        </operation>
+
+
+        <operation error="skip"><!-- 1.5.0 only -->
+            <search position="replace" index="1"><![CDATA[
+            <s><?php echo $price; ?></s>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <s id="opu_price"><?php echo $price; ?></s>
+            ]]></add>
+        </operation>
+
+        <operation error="skip">
+            <search position="replace" index="1"><![CDATA[
+            <?php echo $special; ?>
+            ]]></search>
+            <add><![CDATA[
+            <span id="opu_special"><?php echo $special; ?></span>
+            ]]></add>
+        </operation>
+
+        <operation error="skip">
+            <search position="replace" index="1"><![CDATA[
+            <?php echo $tax; ?>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <span id="opu_tax"><?php echo $tax; ?></span>
+            ]]></add>
+        </operation>
+
+
+        <operation>
+            <search position="before"><![CDATA[
+            <?php echo $footer; ?>
+            ]]></search>
+            <add><![CDATA[
+
+<script type="text/javascript">
+function updatePx() {
+
+	$.ajax({
+		type: 'post',
+		url: 'index.php?route=product/option_price_update/updatePrice',
+		dataType: 'json',
+		data: $(':input[name^="option"][type=\'checkbox\']:checked, :input[type=\'hidden\'], :input[name^="option"][type=\'radio\']:checked, select[name^="option"], :input[name=\'quantity\']'),
+
+		success: function (mydata) {
+			// Update the main price with the new price.
+
+			$('#opu_price').fadeOut('100').queue(function(n){$(this).html(mydata.price); n();}).fadeIn('100');
+			$('#opu_special').fadeOut('100').delay(100).queue(function(n){$(this).html(mydata.special); n();}).fadeIn('100');
+			$('#opu_tax').fadeOut('100').delay(200).queue(function(n){$(this).html(mydata.tax); n();}).fadeIn('100');
+		},
+		error: function (mydata) {
+			alert('error in price update:' + mydata.price);
+		}
+	});
+}
+
+$(document).ready(function () {
+
+	var $updateOnLoad = false; // Change to true if using 1.4.x or want to force an update on page load
+	
+	// Update on initial page load for 1.4.x only
+	if ($updateOnLoad) {
+		updatePx();
+	}
+
+	// Update whenever the triggerable page inputs are changed
+	$(':input[name^="option"],:input[name^="quantity"]').change(function(){
+		updatePx();
+	});
+
+});
+</script>
+
+            ]]></add>
+        </operation>
+
+
+		<!-- IF YOU WANT TO HIDE THE OPTION PRICE NEXT TO THE OPTION, UNCOMMENT THIS BLOCK -->
+		<!-- TO UNCOMMENT, REMOVE THE ARROWS AND DASHES THAT SURROUND THE CODE BELOW -->
+		
+		
+		<!--
+		<operation>
+            <search position="replace"><![CDATA[
+            <?php if ($option_value['price']) { ?>
+            ]]></search>
+            <add><![CDATA[
+            <?php if (1==2) { ?>
+            ]]></add>
+        </operation>
+		-->
+
+
+	</file>
+
+</modification>

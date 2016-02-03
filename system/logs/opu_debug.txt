@@ -1,0 +1,7 @@
+Array
+(
+    [quantity] => 1
+    [product_id] => 65
+    [language_code] => 
+    [redirect] => product/product&amp;path=59_65&amp;product_id=65
+)

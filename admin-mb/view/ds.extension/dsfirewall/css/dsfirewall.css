@@ -1,0 +1,23 @@
+img.lds {float: right;/*position: absolute;*/
+right: 30px;}
+span.v {float: right;position: absolute;
+right: 90px;}
+.vtabs.dsnotification {
+min-height: 1130px;
+}
+
+.contentds{padding: 10px;
+border-left: 1px solid #CCCCCC;
+border-right: 1px solid #CCCCCC;
+border-bottom: 1px solid #CCCCCC;
+min-height: 300px;
+overflow: auto;
+overflow: hidden;
+}
+a.dsbt:hover{
+background-color: rgb(125, 203, 125);
+color: black;
+text-decoration: none;
+}
+
+small.ds{font-size: 70%;}

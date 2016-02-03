@@ -1,0 +1,90 @@
+<modification>
+	<id>Full product path</id>
+	<version>1.7d for 1.5.x.x</version>
+	<vqmver>2.1.7</vqmver>
+	<author>Sirius-Dev</author>
+	
+	<file name="catalog/controller/common/seo_url.php">
+	
+		<operation error="skip">
+			<search position="after"><![CDATA[parse_str($url_data['query'], $data);]]></search>
+			<add><![CDATA[
+				if($data['route'] == 'product/product') {
+          if($this->config->get('full_product_path_bypasscat') && isset($data['path']))
+            unset($data['path']);
+          if(isset($data['manufacturer_id']))
+            unset($data['manufacturer_id']);
+          if(!isset($data['path']))
+					$data = array('path' => $this->getFullProductPath($data['product_id'])) + $data;
+					if(!$data['path']) unset($data['path']);
+				}
+			]]></add>
+		</operation>
+    
+    <operation error="skip">
+			<search position="after"><![CDATA[parse_str($url_info['query'], $data);]]></search>
+			<add><![CDATA[
+				if($data['route'] == 'product/product') {
+          if($this->config->get('full_product_path_bypasscat') && isset($data['path']))
+            unset($data['path']);
+          if(isset($data['manufacturer_id']))
+            unset($data['manufacturer_id']);
+          if(!isset($data['path']))
+					$data = array('path' => $this->getFullProductPath($data['product_id'])) + $data;
+					if(!$data['path']) unset($data['path']);
+				}
+			]]></add>
+		</operation>
+		
+		<operation>
+			<search position="after"><![CDATA[class ControllerCommonSeoUrl extends Controller {]]></search>
+			<add><![CDATA[
+				public function getFullProductPath($product_id) {
+					$path = array();
+					$categories = $this->db->query("SELECT c.category_id, c.parent_id FROM " . DB_PREFIX . "product_to_category p2c LEFT JOIN " . DB_PREFIX . "category c ON (p2c.category_id = c.category_id) WHERE product_id = '" . (int)$product_id . "'")->rows;
+					
+					foreach($categories as $key => $category)
+					{
+						$path[$key] = '';
+						if (!$category) continue;
+						$path[$key] = $category['category_id'];
+						
+						while ($category['parent_id']){
+							$path[$key] = $category['parent_id'] . '_' . $path[$key];
+							$category = $this->db->query("SELECT category_id, parent_id FROM " . DB_PREFIX . "category WHERE category_id = '" . $category['parent_id']. "'")->row;
+						}
+						
+						$path[$key] = $path[$key];
+						$banned_cats = $this->config->get('full_product_path_categories');
+						
+						if(count($banned_cats) && (count($categories) > 1))
+						{
+							//if(preg_match('#[_=](\d+)&$#', $path[$key], $cat))
+							if(preg_match('#[_=](\d+)$#', $path[$key], $cat))
+							{
+								if(in_array($cat[1], $banned_cats))
+									unset($path[$key]);
+							}
+						}
+					}
+					
+					if (!count($path)) return '';
+          
+					// wich one is the largest ?
+					$whichone = array_map('strlen', $path);
+					asort($whichone);
+					$whichone = array_keys($whichone);
+					
+					if ($this->config->get('full_product_path_largest'))
+						$whichone = array_pop($whichone);
+						
+					else $whichone = array_shift($whichone);
+					
+					return $path[$whichone];
+				}
+			]]></add>
+		</operation>
+		
+	</file>
+
+</modification>

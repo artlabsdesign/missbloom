@@ -1,0 +1,40 @@
+<modification>
+    <id>Pop Log</id>
+      <version>2.0</version>
+		   <vqmver>2.4.1</vqmver>
+       <author>Dimitar Koev</author>
+<file name="catalog/controller/account/login.php">
+	<operation>
+		<search position="before" offset="1"><![CDATA[?>]]></search>
+		<add><![CDATA[  		 
+public function send_login() {
+	
+		$this->language->load('account/login');
+    $this->load->model('account/customer');				
+
+		$json = array();
+		if (!$this->customer->login($this->request->post['email'], $this->request->post['password'])) {
+			$json['error'] = $this->language->get('error_login');
+		}
+
+		$customer_info = $this->model_account_customer->getCustomerByEmail($this->request->post['email']);
+
+		if ($customer_info && !$customer_info['approved']) {
+			$json['error'] = $this->language->get('error_approved');
+		}
+
+		if (($this->request->server['REQUEST_METHOD'] == 'POST') && !isset($json['error'])) {
+		$this->cart->clear();
+
+    if ($this->customer->login($this->request->post['email'], $this->request->post['password'])) {		
+			unset($this->session->data['guest']);
+			
+      $json['success'] = $this->customer->isLogged();					
+		}
+		}
+		$this->response->setOutput(json_encode($json));
+}
+     ]]></add>
+	</operation>  	
+</file>	
+</modification>

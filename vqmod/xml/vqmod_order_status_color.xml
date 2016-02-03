@@ -1,0 +1,344 @@
+<modification>
+
+	<id>Order Statuses Color</id>
+	<version>1.0.0</version>
+	<vqmver>LATEST</vqmver>
+	<author>thaizoft.com</author>
+
+	<file name="admin-mb/view/template/common/header.tpl">
+		<operation>
+			<search position="before"><![CDATA[</head>]]></search>
+			<add><![CDATA[<!--<link rel="stylesheet" href="view/stylesheet/jquery.minicolors.css">-->]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/model/localisation/order_status.php">
+		<operation>
+			<search position="before" index="1"><![CDATA[$this->cache->delete('order_status');]]></search>
+			<add><![CDATA[$this->db->query("INSERT INTO " . DB_PREFIX . "order_status_color SET order_status_id = '" . (int)$order_status_id . "', `color` = '" . $this->db->escape($data['color']) . "'");]]></add>
+		</operation>
+
+		<operation>
+			<search position="before"><![CDATA[public function deleteOrderStatus($order_status_id) {]]></search>
+			<add><![CDATA[
+			    public function editOrderStatusColor($order_status_id, $data) {
+            		$this->db->query("DELETE FROM " . DB_PREFIX . "order_status_color WHERE order_status_id = '" . (int)$order_status_id . "'");
+            
+                    $this->db->query("INSERT INTO " . DB_PREFIX . "order_status_color SET order_status_id = '" . (int)$order_status_id . "', `color` = '" . $this->db->escape($data['color']) . "'");
+            		
+            		$this->cache->delete('order_status');
+            	}
+            	
+            	public function getOrderStatusColor($order_status_id) {
+            		$query = $this->db->query("SELECT color FROM " . DB_PREFIX . "order_status_color WHERE order_status_id = '" . (int)$order_status_id . "'");
+            		
+            		return $query->row;
+            	}
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/controller/localisation/order_status.php">
+		<operation>
+			<search position="after"><![CDATA[$this->model_localisation_order_status->editOrderStatus($this->request->get['order_status_id'], $this->request->post);]]></search>
+			<add><![CDATA[$this->model_localisation_order_status->editOrderStatusColor($this->request->get['order_status_id'], $this->request->post);]]></add>
+		</operation>
+		
+		<operation>
+			<search position="before"><![CDATA[$this->data['order_statuses'][] = array(]]></search>
+			<add><![CDATA[$color_info = $this->model_localisation_order_status->getOrderStatusColor($result['order_status_id']);
+    		if(empty($color_info['color']))
+    		    $color_info['color'] = '';]]></add>
+		</operation>
+		
+		<operation>
+			<search position="after"><![CDATA[$this->data['entry_name'] = $this->language->get('entry_name');]]></search>
+			<add><![CDATA[$this->data['entry_color'] = $this->language->get('entry_color');]]></add>
+		</operation>
+		
+		<operation>
+			<search position="before"><![CDATA[if (isset($this->error['name'])) {]]></search>
+			<add><![CDATA[
+			    if (isset($this->error['color'])) {
+        			$this->data['error_color'] = $this->error['color'];
+        		} else {
+        			$this->data['error_color'] = array();
+        		}
+			]]></add>
+		</operation>
+		
+		<operation>
+			<search position="after"><![CDATA[$this->data['order_status'] = $this->model_localisation_order_status->getOrderStatusDescriptions($this->request->get['order_status_id']);]]></search>
+			<add><![CDATA[$color_info = $this->model_localisation_order_status->getOrderStatusColor($this->request->get['order_status_id']);]]></add>
+		</operation>
+		
+		<operation>
+			<search position="before"><![CDATA[$this->template = 'localisation/order_status_form.tpl';]]></search>
+			<add><![CDATA[
+			    if(!empty($color_info['color']))
+        		    $this->data['color'] = $color_info['color'];
+                else 
+                    $this->data['color'] = '';
+            ]]></add>
+		</operation>
+		
+		<operation>
+			<search position="after"><![CDATA['order_status_id' => $result['order_status_id'],]]></search>
+			<add><![CDATA['color'           => $color_info['color'],]]></add>
+		</operation>
+		
+	</file>
+	
+	<file name="admin-mb/view/template/localisation/order_status_form.tpl">
+		<operation>
+			<search position="before"><![CDATA[</table>]]></search>
+			<add><![CDATA[<tr>
+            <td><span class="required">*</span> Выберите цвет</td>
+            <td><input class="minicolors" data-theme="bootstrap" type="text" name="color" id="color" value="<?php echo $color; ?>"></td>
+          </tr>]]></add>
+		</operation>
+		
+		<operation>
+			<search position="before"><![CDATA[<?php echo $footer; ?>]]></search>
+			<add><![CDATA[<script src="view/javascript/jquery/jquery.minicolors.js"></script>
+            <script type="text/javascript">
+            
+               $(document).ready(function () {
+                $(".minicolors").minicolors();
+               });
+            
+            </script>
+            ]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/view/template/localisation/order_status_list.tpl">
+		<operation>
+			<search position="replace"><![CDATA[<td class="left"><?php echo $order_status['name']; ?></td>]]></search>
+			<add><![CDATA[<?php if(isset($order_status['color']) && !empty($order_status['color'])) { ?>
+              <td class="left"><span class="labelSt" style="background-color:<?php echo $order_status['color']; ?>;"><?php echo $order_status['name']; ?></span></td>
+              <?php }else{ ?><td class="left"><?php echo $order_status['name']; ?></td><?php } ?>
+              ]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/language/english/localisation/order_status.php">
+		<operation>
+			<search position="after"><![CDATA[$_['entry_name']       = 'Order Status Name:';]]></search>
+			<add><![CDATA[$_['entry_color']       = 'Order Status Color:';]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/model/sale/order.php">
+		<operation>
+			<search position="replace"><![CDATA[$sql = "SELECT o.order_id, CONCAT(o.firstname, ' ', o.lastname) AS customer, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS status, o.total, o.currency_code, o.currency_value, o.date_added, o.date_modified FROM `" . DB_PREFIX . "order` o";]]></search>
+			<add><![CDATA[$sql = "SELECT o.order_id, CONCAT(o.firstname, ' ', o.lastname) AS customer, (SELECT os.name FROM " . DB_PREFIX . "order_status os WHERE os.order_status_id = o.order_status_id AND os.language_id = '" . (int)$this->config->get('config_language_id') . "') AS status, o.total, o.currency_code, o.currency_value, o.date_added, o.date_modified, o.order_status_id FROM `" . DB_PREFIX . "order` o";]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/controller/sale/order.php">
+		<operation>
+			<search position="after"><![CDATA['status'        => $result['status'],]]></search>
+			<add><![CDATA['color'         => $color_info['color'],]]></add>
+		</operation>
+		
+		<operation>
+			<search position="after"><![CDATA[public function index() {]]></search>
+			<add><![CDATA[$this->load->model('localisation/order_status');]]></add>
+		</operation>
+		
+		<operation>
+			<search position="before" index="1"><![CDATA[$this->data['orders'][] = array(]]></search>
+			<add><![CDATA[$color_info = $this->model_localisation_order_status->getOrderStatusColor($result['order_status_id']);
+    		if(empty($color_info['color']))
+    		    $color_info['color'] = '';]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/view/template/sale/order_list.tpl">
+		<operation>
+			<search position="replace"><![CDATA[<td class="left"><?php echo $order['status']; ?></td>]]></search>
+			<add><![CDATA[
+            <script type="text/javascript">
+            function hide_show(id,select) {
+                document.getElementById(id).style.display = 'none';
+                document.getElementById(select).style.display = 'block';
+            }
+            </script>
+            
+              <?php if(isset($order['color']) && !empty($order['color'])) { ?>
+              <td class="left"><span onclick="hide_show('label_id_<?php echo $order['order_id']; ?>','select_id_<?php echo $order['order_id']; ?>'); return false;" id="label_id_<?php echo $order['order_id']; ?>" class="labelSt" style="background-color:<?php echo $order['color']; ?>;"><?php echo $order['status']; ?></span>
+              <div id="select_id_<?php echo $order['order_id']; ?>" style="display: none;">                           
+				<select name="order_status_id" onChange="updateOrderStatus(<?=$order['order_id']?>,this.value)" style="-webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;>
+                    <?php foreach ($order_statuses as $order_status) { ?>
+                    <?php if ($order_status['order_status_id'] == $order['order_status_id']) { ?>
+                    <option value="<?php echo $order_status['order_status_id']; ?>" selected="selected"><span class="labelSt" style="background-color:<?php echo $order['color']; ?>;"><?php echo $order_status['name']; ?></span></option>
+                    <?php } else { ?>
+                    <option value="<?php echo $order_status['order_status_id']; ?>"><span class="labelSt" style="background-color:<?php echo $order['color']; ?>;"><?php echo $order_status['name']; ?></span></option>
+                    <?php } ?>
+                    <?php } ?>
+                  </select><span id="status_order_<?=$order['order_id']?>"></span>
+              </div></td>
+              <?php }else{?><td class="left"><?php echo $order['status']; ?></td><?php } ?> ]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/controller/common/home.php">
+		<operation>
+			<search position="after"><![CDATA[public function index() {]]></search>
+			<add><![CDATA[$this->load->model('localisation/order_status');]]></add>
+		</operation>
+		
+		<operation>
+			<search position="after"><![CDATA[status'     => $result['status'],]]></search>
+			<add><![CDATA['color'         => $color_info['color'],]]></add>
+		</operation>
+		
+		<operation>
+			<search position="before"><![CDATA[$this->data['orders'][] = array(]]></search>
+			<add><![CDATA[$color_info = $this->model_localisation_order_status->getOrderStatusColor($result['order_status_id']);
+    		if(empty($color_info['color']))
+    		    $color_info['color'] = '';]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/view/template/common/home.tpl">
+		<operation>
+			<search position="replace"><![CDATA[<td class="left"><?php echo $order['status']; ?></td>]]></search>
+			<add><![CDATA[<?php if(isset($order['color']) && !empty($order['color'])) { ?>
+              <td class="left"><span class="labelSt" style="background-color:<?php echo $order['color']; ?>;"><?php echo $order['status']; ?></span></td>
+              <?php }else{?><td class="left"><?php echo $order['status']; ?></td><?php } ?> ]]></add>
+		</operation>
+	</file>
+	
+	
+	<file name="admin-mb/view/template/sale/order_list.tpl">        
+		<operation>
+            <search position="replace">
+				<![CDATA[<td class="left"><?php echo $order['status']; ?></td>]]>
+			</search>
+            <add>
+				<![CDATA[
+                                                
+				<td class="left"><select name="order_status_id" onChange="updateOrderStatus(<?=$order['order_id']?>,this.value)" style="-webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;>
+                    <?php foreach ($order_statuses as $order_status) { ?>
+                    <?php if ($order_status['order_status_id'] == $order['order_status_id']) { ?>
+                    <option value="<?php echo $order_status['order_status_id']; ?>" selected="selected"><span class="labelSt" style="background-color:<?php echo $order['color']; ?>;"><?php echo $order_status['name']; ?></span></option>
+                    <?php } else { ?>
+                    <option value="<?php echo $order_status['order_status_id']; ?>"><span class="labelSt" style="background-color:<?php echo $order['color']; ?>;"><?php echo $order_status['name']; ?></span></option>
+                    <?php } ?>
+                    <?php } ?>
+                  </select>        <span id="status_order_<?=$order['order_id']?>"></span>    </td>
+                  
+				]]>
+			</add>
+        </operation>
+		<operation>
+            <search position="before">
+				<![CDATA[<?php echo $footer; ?>]]>
+			</search>
+            <add>
+				<![CDATA[
+				<script type="text/javascript"><!--
+				function updateOrderStatus(order_id,status){
+					$.ajax({
+						type: 'POST',
+						url: 'index.php?route=sale/order/updateOrderStatus&token=<?=$token?>',
+						dataType: 'json',
+						data: 'order_id=' + order_id + '&status=' + status,
+						beforeSend: function() {
+							$('.success, .warning, #success').remove();
+							$('#status_order_'+order_id).after('<img id="attention" src="view/image/loading.gif" alt="" /> ');
+						},
+						complete: function() {
+							
+							$('#attention').remove();
+                            $('#status_order_'+order_id).after('<img id="success" src="view/image/success.png" alt="" />');
+
+						},
+						success: function(data) {
+							if (data.error) {
+								alert(data.error);
+							}
+							
+							if (data.success) {
+								$('#status_order_'+order_id).after('<div class="success">' + data.success + '</div>');
+												
+								
+							}
+						}
+					});
+				}
+				//--></script>
+				]]>
+			</add>
+        </operation>
+	</file>
+	<file name="admin-mb/controller/sale/order.php">
+		<operation>
+            <search position="before">
+				<![CDATA[public function delete() {]]>
+			</search>
+            <add>
+				<![CDATA[
+				public function updateOrderStatus(){
+					$json = array();
+					if (!$this->user->hasPermission('modify', 'sale/order')) {
+						$json['error'] = $this->language->get('error_permission');
+					} else {
+						if(isset($this->request->post['order_id'])){
+							$order_id = $this->request->post['order_id'];
+						}else{
+							$order_id = 0;
+						}
+						if(isset($this->request->post['status'])){
+							$status = $this->request->post['status'];
+						}else{
+							$status = 0;
+						}
+						if($order_id != 0){
+							$this->load->model('sale/order');
+							$this->model_sale_order->updateOrderStatus($order_id,$status);							
+						}
+					}
+					$this->load->library('json');
+
+					$this->response->setOutput(Json::encode($json));
+				}
+				]]>
+			</add>
+        </operation>
+        <operation>
+            <search position="before">
+				<![CDATA['customer'      => $result['customer'],]]>
+			</search>
+            <add>
+				<![CDATA['order_status_id' => $result['order_status_id'],]]>
+			</add>
+        </operation>
+        <operation>
+            <search position="before">
+				<![CDATA[$this->data['delete'] = $this->url->link('sale/order/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');]]>
+			</search>
+            <add>
+				<![CDATA[$this->data['text_wait'] = $this->language->get('text_wait');]]>
+			</add>
+        </operation>
+	</file>
+	<file name="admin-mb/model/sale/order.php">
+		<operation>
+            <search position="before">
+				<![CDATA[public function addOrder($data) {]]>
+			</search>
+            <add>
+				<![CDATA[
+				public function updateOrderStatus($order_id,$status){
+						$sql = "UPDATE ".DB_PREFIX."order set order_status_id = '" . (int)$status . "' where order_id = '" . (int)$order_id . "'";
+						$query = $this->db->query($sql);
+				}
+				]]>
+			</add>
+        </operation>
+	</file>
+	
+</modification>

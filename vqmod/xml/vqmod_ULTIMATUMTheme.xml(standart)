@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+  <id>ULTIMATUM - Professional Responsive OpenCart theme</id>
+  <version>1.0</version>
+  <vqmver>2.1.0</vqmver>
+  <author>Dimitar Koev</author>
+  <decription>
+    <![CDATA[/*
+      This file is part of the "ULTIMATUM - Parallax Responsive OpenCart theme"
+      
+      The "ULTIMATUM - Parallax Responsive OpenCart theme" is a commercial software: you can not redistribute it 
+      and/or modify it under ANY conditions.
+      
+      ---------------------------------------------------------------------
+      Name:		ULTIMATUM - Professional Responsive OpenCart theme
+      
+      Theme Version: 1.0
+      
+      OpenCart:	Version 1.5.6
+      
+      Author: 	Dimitar Koev
+      
+      License type: 	Commercial
+      
+      Copyright 2013 - All rights reserved!
+      
+      */]]>
+  </decription>
+  <file name="admin-mb/model/sale/customer.php">
+		<operation>
+			<search position="replace" index="1"><![CDATA[
+				return $query->rows;
+			]]></search>
+			<add><![CDATA[
+				if ($this->config->get('subscribero_status') && !empty($data['filter_newsletter'])) {
+					$query1 = $this->db->query("SELECT * FROM " . DB_PREFIX . "subscribero");
+					
+					return array_merge($query1->rows, $query->rows);
+				} else {
+					return $query->rows;
+				}
+			]]></add>
+		</operation>
+		<operation>
+			<search position="replace" index="1"><![CDATA[
+				return $query->row['total'];
+			]]></search>
+			<add><![CDATA[
+				if ($this->config->get('subscribero_status') && !empty($data['filter_newsletter'])) {
+					$query1 = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "subscribero");
+					
+					$count = $query->row['total'] + $query1->row['total'];
+					
+					return $count;
+				} else {
+					return $query->row['total'];
+				}
+			]]></add>
+		</operation>
+	</file>
+	<file name="admin-mb/view/template/common/login.tpl">
+		<operation>
+			<search position="replace" index="1"><![CDATA[<div class="box" style="width: 400px; min-height: 300px; margin-top: 40px; margin-left: auto; margin-right: auto;">]]></search>
+			<add><![CDATA[<div class="box box-login" style="width: 400px; min-height: 300px; margin-top: 40px; margin-left: auto; margin-right: auto;">]]></add>
+		</operation>
+	</file>
+	<file name="admin-mb/view/template/common/home.tpl">
+		<operation>
+			<search position="replace"><![CDATA[<div class="dashboard-heading"><?php echo $text_overview; ?></div>]]></search>
+			<add><![CDATA[<div class="dashboard-heading"><i class="icon-eye-open"></i> <?php echo $text_overview; ?></div>]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[<div class="dashboard-heading"><?php echo $text_statistics; ?></div>]]></search>
+			<add><![CDATA[<div class="dashboard-heading"><i class="icon-bar-chart"></i> <?php echo $text_statistics; ?></div>]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[<div class="dashboard-heading"><?php echo $text_latest_10_orders; ?></div>]]></search>
+			<add><![CDATA[<div class="dashboard-heading"><i class="icon-tags"></i> <?php echo $text_latest_10_orders; ?></div>]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[<h1><img src="view/image/home.png" alt="" /> <?php echo $heading_title; ?></h1>]]></search>
+			<add><![CDATA[<h1><i class="icon-tasks"></i> <?php echo $heading_title; ?></h1>]]></add>
+		</operation>
+	</file>
+	<file name="admin-mb/model/catalog/product.php">
+		<operation error="log">
+			<search position="after"><![CDATA[$this->cache->delete('product');]]></search>
+			<add><![CDATA[$this->cache->delete('ajax_search');]]></add>
+		</operation>
+	</file>
+  <file name="admin-mb/view/template/common/header.tpl">  
+  <operation error="skip">
+      <search position="replace">
+        <![CDATA[view/javascript/jquery/jquery-1.7.1.min.js]]>
+      </search>
+      <add>
+        <![CDATA[https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<div class="div2"><img src="view/image/logo.png" title="<?php echo $heading_title; ?>" onclick="location = '<?php echo $home; ?>'" /></div>]]>
+      </search>
+      <add>
+        <![CDATA[<div class="div2"><img src="../image/<?php echo $this->config->get('config_logo'); ?>" title="<?php echo $heading_title; ?>" onclick="location = '<?php echo $home; ?>'" style="max-height:40px;" /></div>]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="before">
+        <![CDATA[</head>]]>
+      </search>
+      <add>
+        <![CDATA[<link href="view/stylesheet/css/custom_skin.css" rel="stylesheet" />
+		<link href="view/stylesheet/css/font-awesome.min.css" rel="stylesheet" />]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<li id="dashboard"><a href="<?php echo $home; ?>" class="top"><?php echo $text_dashboard; ?></a></li>]]>
+      </search>
+      <add>
+        <![CDATA[<li id="dashboard"><a href="<?php echo $home; ?>" class="top"><span><i class="icon-tasks"></i></span><?php echo $text_dashboard; ?></a></li>]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<li id="catalog"><a class="top"><?php echo $text_catalog; ?></a>]]>
+      </search>
+      <add>
+        <![CDATA[<li id="catalog"><a class="top"><span><i class="icon-book"></i></span><?php echo $text_catalog; ?></a>]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<li id="extension"><a class="top"><?php echo $text_extension; ?></a>]]>
+      </search>
+      <add>
+        <![CDATA[<li id="extension"><a class="top"><span><i class="icon-wrench"></i></span><?php echo $text_extension; ?></a>]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<li id="sale"><a class="top"><?php echo $text_sale; ?></a>]]>
+      </search>
+      <add>
+        <![CDATA[<li id="sale"><a class="top"><span><i class="icon-tags"></i></span><?php echo $text_sale; ?></a>]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<li id="system"><a class="top"><?php echo $text_system; ?></a>]]>
+      </search>
+      <add>
+        <![CDATA[<li id="system"><a class="top"><span><i class="icon-cogs"></i></span><?php echo $text_system; ?></a>]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<li id="reports"><a class="top"><?php echo $text_reports; ?></a>]]>
+      </search>
+      <add>
+        <![CDATA[<li id="reports"><a class="top"><span><i class="icon-edit"></i></span><?php echo $text_reports; ?></a>]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<li id="help"><a class="top"><?php echo $text_help; ?></a>]]>
+      </search>
+      <add>
+        <![CDATA[<li id="help"><a class="top"><span><i class="icon-flag"></i></span><?php echo $text_help; ?></a>]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<li id="store"><a href="<?php echo $store; ?>" target="_blank" class="top"><?php echo $text_front; ?></a>]]>
+      </search>
+      <add>
+        <![CDATA[<li id="store"><a href="<?php echo $store; ?>" target="_blank" class="top"><span><i class="icon-shopping-cart"></i></span><?php echo $text_front; ?></a>]]>
+      </add>
+    </operation>
+	<operation error="skip">
+      <search position="replace">
+        <![CDATA[<li><a class="top" href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>]]>
+      </search>
+      <add>
+        <![CDATA[<li><a class="top" href="<?php echo $logout; ?>"><span><i class="icon-signout"></i></span><?php echo $text_logout; ?></a></li>]]>
+      </add>
+    </operation>
+  	<operation>
+			<search position="after"><![CDATA[
+				<li><a href="<?php echo $feed; ?>"><?php echo $text_feed; ?></a></li>
+			]]></search>
+			<add><![CDATA[
+				<li><a href="<?php echo $subscribero; ?>">Newsletter Subscribers</a></li>
+				<li><a href="<?php echo $customertestimonial; ?>">Testimonials</a></li>
+			]]></add>
+		</operation>
+		<operation error="log">
+			<search position="after"><![CDATA[      <li><a href="<?php echo $module; ?>"><?php echo $text_module; ?></a></li>]]></search>
+			<add><![CDATA[
+			    <li id="blog"><a class="parent">EasyBlog</a>
+					<ul>
+					  <?php if (!$installed) { ?>	
+					  <li><a href="<?php echo $blog_install; ?>">Install Now</a></li>
+					  <?php } else { ?>
+					  <li><a href="<?php echo $blog_setting; ?>">EasyBlog Settings</a></li>
+					  <li><a href="<?php echo $blog_category; ?>">EasyBlog Categories</a></li>
+					  <li><a href="<?php echo $blog_post; ?>">EasyBlog Posts</a></li>
+					  <li><a href="<?php echo $blog_review; ?>">Comments</a></li>
+					  <?php } ?>
+					</ul>
+				</li>
+			]]></add>
+		</operation>
+	</file>
+  
+  <file name="system/library/user.php">
+		<operation error="log">
+			<search position="after"><![CDATA[private $user_id;]]></search>
+			<add><![CDATA[private $user_group_id;]]></add>
+		</operation>
+		
+		<operation error="log">
+			<search position="after"><![CDATA[$this->user_id = $user_query->row['user_id'];]]></search>
+			<add><![CDATA[$this->user_group_id = $user_query->row['user_group_id'];]]></add>
+		</operation>
+		
+		<operation error="log">
+			<search position="after"><![CDATA[$this->user_id = '';]]></search>
+			<add><![CDATA[$this->user_group_id = '';]]></add>
+		</operation>
+		
+		<operation error="log">
+			<search position="before"><![CDATA[public function getUserName() {]]></search>
+			<add><![CDATA[
+				public function getGroupId(){
+					return $this->user_group_id;
+				}
+			]]></add>
+		</operation>
+	</file>
+	
+	<file name="admin-mb/controller/common/header.php">
+		<operation error="log">
+			<search position="before"><![CDATA[$this->data['stores'] = array();]]></search>
+			<add><![CDATA[
+			
+			if ($this->config->get('blog_install_date')) {
+				$this->data['installed'] = true;
+			} else {
+				$this->data['installed'] = false;
+			}
+			
+			$this->data['blog_install'] = $this->url->link('blog/install', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['blog_setting'] = $this->url->link('blog/setting', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['blog_category'] = $this->url->link('blog/category', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['blog_post'] = $this->url->link('blog/post', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['blog_review'] = $this->url->link('blog/review', 'token=' . $this->session->data['token'], 'SSL');
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[
+				$this->data['home'] = $this->url->link('common/home', 'token=' . $this->session->data['token'], 'SSL');
+			]]></search>
+			<add><![CDATA[
+				$this->data['subscribero'] = $this->url->link('extension/subscribero', 'token=' . $this->session->data['token'], 'SSL');
+			]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$this->data['information'] = $this->url->link('catalog/information', 'token=' . $this->session->data['token'], 'SSL');]]></search>
+			<add><![CDATA[			$this->data['customertestimonial'] = $this->url->link('catalog/customertestimonial', 'token=' . $this->session->data['token'], 'SSL');]]></add>
+		</operation>
+	</file>
+	
+	<file name="catalog/controller/common/seo_url.php">
+	
+	<operation error="log">
+			<search position="before"><![CDATA[if (isset($this->request->get['route'])) {]]></search>
+			<add><![CDATA[
+			    elseif (isset($this->request->get['post_id'])) {
+				$this->request->get['route'] = 'blog/post';
+			} elseif (isset($this->request->get['bpath'])) {
+				$this->request->get['route'] = 'blog/category';
+			}	
+			]]></add>
+		</operation>
+	
+		<operation error="log">
+			<search position="after"><![CDATA[$url = explode('=', $query->row['query']);]]></search>
+			<add><![CDATA[
+			    if ($url[0] == 'post_id') {
+					$this->request->get['post_id'] = $url[1];
+				}
+				
+				if ($url[0] == 'blog_category_id') {
+					if (!isset($this->request->get['bpath'])) {
+						$this->request->get['bpath'] = $url[1];
+					} else {
+						$this->request->get['bpath'] .= '_' . $url[1];
+					}
+				}	
+			]]></add>
+		</operation>
+		
+		<operation error="log">
+			<search position="replace"><![CDATA[				if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {]]></search>
+			<add><![CDATA[if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id') || ($data['route'] == 'blog/post' && $key == 'post_id')) {]]></add>
+		</operation>
+			
+		<operation error="log">
+			<search position="replace"><![CDATA[} elseif ($key == 'path') {]]></search>
+			<add><![CDATA[
+			} elseif ($key == 'bpath') {
+				$categories = explode('_', $value);
+						
+				foreach ($categories as $category) {
+					$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "url_alias WHERE `query` = 'blog_category_id=" . (int)$category . "'");
+			
+					if ($query->num_rows) {
+						$url .= '/' . $query->row['keyword'];
+					}							
+				}
+				
+				unset($data[$key]);
+				
+			} elseif ($key == 'path') {
+			
+			]]></add>
+		</operation>
+	</file>
+  	<file name="system/startup.php">
+		<operation error="skip">
+			<search position="before"><![CDATA[?>]]></search>
+			<add><![CDATA[
+			defined('HTTP_CATALOG') or define('HTTP_CATALOG', HTTP_SERVER);
+			defined('HTTP_IMAGE') or define('HTTP_IMAGE', HTTP_CATALOG.'image/');
+			defined('HTTPS_IMAGE') or define('HTTPS_IMAGE', HTTP_CATALOG.'image/');]]></add>
+		</operation>
+	</file>
+	<file name="catalog/model/account/customer.php">
+		<operation error="skip">
+			<search position="after"><![CDATA[
+				public function addCustomer($data) {
+			]]></search>
+			<add><![CDATA[
+				if ($this->config->get('subscribero_status') && !empty($data['email'])) {
+					$this->db->query("DELETE FROM " . DB_PREFIX . "subscribero WHERE email = '" . $this->db->escape($data['email']) . "'");
+				}
+			]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/common/footer.php">
+		<operation>
+			<search position="before"><![CDATA[$this->render();]]></search>
+			<add><![CDATA[
+				if( NULL != ( $cookie_law = $this->config->get('cookie_law') ) ) {
+					if( isset( $cookie_law['text'][$this->config->get('config_language')] ) && ! empty( $cookie_law['enabled'] ) ) {
+						if( ! isset( $_COOKIE['cookie_law'] ) || $_COOKIE['cookie_law'] != '1' ) {					
+							$cookie_law['text'] = htmlspecialchars_decode( $cookie_law['text'][$this->config->get('config_language')] );
+
+							$cookie_law['text_yes'] = isset( $cookie_law['text_yes'][$this->config->get('config_language')] ) ? $cookie_law['text_yes'][$this->config->get('config_language')] : 'Yes, I accept';
+							$cookie_law['text_no'] = isset( $cookie_law['text_no'][$this->config->get('config_language')] ) ? $cookie_law['text_no'][$this->config->get('config_language')] : 'No thanks, take me to Google';
+							$cookie_law['url_no'] = isset( $cookie_law['url_no'][$this->config->get('config_language')] ) ? $cookie_law['url_no'][$this->config->get('config_language')] : 'https://www.google.com';
+							
+							$this->data['cookie_law'] = $cookie_law;
+						}
+					}
+				}
+			]]></add>
+		</operation>
+	</file>
+	<file name="catalog/view/theme/*/template/common/footer.tpl">
+		<operation>
+			<search position="before"><![CDATA[</body>]]></search>
+			<add><![CDATA[
+				<?php if( ! empty( $cookie_law['text'] ) ) { ?>
+					<?php
+						$cookie_positions = explode( '_', $cookie_law['position'] );
+					?>
+					
+					<style type="text/css">
+						.cookie_law {
+							position: fixed;
+							<?php if( in_array( 'bottom', $cookie_positions ) ) { ?>
+								bottom: <?php echo (int) $cookie_law['margin_bottom']; ?>px;
+							<?php } ?>
+							<?php if( in_array( 'top', $cookie_positions ) ) { ?>
+								top: <?php echo (int) $cookie_law['margin_top']; ?>px;
+							<?php } ?>
+							<?php if( in_array( 'left', $cookie_positions ) ) { ?>
+								left: <?php echo (int) $cookie_law['margin_left']; ?>px;
+							<?php } ?>
+							<?php if( in_array( 'right', $cookie_positions ) ) { ?>
+								right: <?php echo (int) $cookie_law['margin_right']; ?>px;
+							<?php } ?>
+							<?php if( ! in_array( $cookie_law['position'], array( 'top', 'bottom' ) ) ) { ?>
+								max-width: 200px;
+							<?php } ?>
+							color: #fff;
+							border-radius: <?php echo (int) $cookie_law['border_radius']; ?>px;
+							box-shadow: 0 0 5px #000000;
+							padding: <?php echo (int) $cookie_law['padding_top']; ?>px <?php echo (int) $cookie_law['padding_right']; ?>px <?php echo (int) $cookie_law['padding_bottom']; ?>px <?php echo (int) $cookie_law['padding_left']; ?>px;
+							background: rgba(0,0,0,<?php echo $cookie_law['transparency']; ?>);
+							z-index: 99999;
+							display: none;
+						}
+						
+						.cookie_law a {
+							color: #fff;
+						}
+						
+						.cookie_law h1, .cookie_law h2, .cookie_law h3, .cookie_law h4, .cookie_law h5, .cookie_law h6 {
+							padding: 0 0 15px 0;
+							margin: 0;
+							font-weight: normal;
+							-webkit-margin-before: 0;
+							-webkit-margin-after: 0;
+							-webkit-margin-start: 0;
+							-webkit-margin-end: 0;
+						}
+						
+						.cookie_law h1 {
+							font-size: 18px;
+							color:#ffffff;
+						}
+						.cookie_law h2 {
+							font-size: 17px;
+							color:#ffffff;
+						}
+						.cookie_law h3 {
+							font-size: 16px;
+							color:#ffffff;
+						}
+						
+						.cookie_buttons {
+							text-align: center;
+							padding-top: 10px;
+						}
+						
+						.cookie_buttons a {
+							width: 32px;
+							height: 32px;
+							margin: 0 3px;
+							color#ffffff !Important;
+							width:40px;
+							height:40px;
+							display:inline-block;
+							line-height:40px;
+							text-align:center;
+							vertical-align:middle;
+							font-size:21px;
+							text-decoration:none;
+							border-radius: 3px;
+							-moz-border-radius: 3px;
+							-webkit-border-radius: 3px;
+						}
+						.cookie_buttons a.cookie-btn-yes {
+						background-color:#6fc200;
+						
+						}
+						.cookie_buttons a.cookie-btn-no {
+						background-color:#df0008;
+						
+						}
+						
+						.cookie_law table.cookie_table {
+							max-width: 960px;
+							margin: 0 auto;
+							
+							> tr > td {
+								vertical-align: middle;
+							}
+						}
+						.cookie_law table.cookie_table td {
+								padding: 10px;
+						}
+					</style>
+					<div id="cookie-info" class="cookie_law <?php echo $cookie_law['position']; ?>">
+						<?php if( in_array( $cookie_law['position'], array( 'top', 'bottom' ) ) ) { ?>
+							
+									<?php echo $cookie_law['text']; ?>
+									
+										<div class="cookie_buttons">
+											<a title="<?php echo $cookie_law['text_yes']; ?>" href="#" class="cookie-btn-yes"><i class="icon-check"></i></a>
+											<a title="<?php echo $cookie_law['text_no']; ?>" href="<?php echo $cookie_law['url_no']; ?>" class="cookie-btn-no"><i class="icon-remove"></i></a>
+										</div>
+									
+						<?php } else { ?>
+							<?php echo $cookie_law['text']; ?>
+							
+							<div class="cookie_buttons">
+								<a title="<?php echo $cookie_law['text_yes']; ?>" href="#" class="cookie-btn-yes"><i class="icon-check"></i></a>
+								<a title="<?php echo $cookie_law['text_no']; ?>" href="<?php echo $cookie_law['url_no']; ?>" class="cookie-btn-no"><i class="icon-remove"></i></a>
+							</div>
+						<?php } ?>
+					</div>
+					
+					<script type="text/javascript">
+						(function(){
+							var pos		= '<?php echo $cookie_law['position']; ?>',
+								clear	= <?php echo ! empty( $cookie_law['clear_cookies'] ) ? 'true' : 'false'; ?>;
+								$info	= $('#cookie-info');
+							
+							if( getCookie('cookie_law') == '1' )
+								return;
+								
+							function clearCookies(){
+									var cookies	= document.cookie.split(';');
+									var pathBits = location.pathname.split('/');
+									
+									for( var i = 0; i < cookies.length; i++ ) {
+										var name = cookies[i].split('=')[0];
+										
+										if( name == 'PHPSESSID' ) continue;
+										
+										var pathCurrent = ' path=';
+										
+										document.cookie = name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT;';
+										document.cookie = name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT; domain=.' + window.location.hostname;
+										document.cookie = name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT; domain=' + window.location.hostname;
+										
+										for (var j = 0; j < pathBits.length; j++) {
+											pathCurrent += ((pathCurrent.substr(-1) != '/') ? '/' : '') + pathBits[j];
+											document.cookie = name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT; ' + pathCurrent + ';';
+											document.cookie = name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT; ' + pathCurrent + '; domain=.' + window.location.hostname;
+											document.cookie = name + '=; expires=Thu, 01-Jan-70 00:00:01 GMT; ' + pathCurrent + '; domain=' + window.location.hostname;
+										}
+									}
+							}
+							
+							if( clear )
+								clearCookies();
+								
+							$info.show();
+							
+							$(window).bind('resize.ci', function(){
+								if( pos == 'top' || pos == 'bottom' ) {
+									$info.width( $(window).width() - ( $info.outerWidth( true ) - $info.width() ) );
+								}
+							}).trigger('resize.ci');
+							
+							
+							
+							function getCookie(c_name) {
+								var c_value = document.cookie,
+									c_start = c_value.indexOf(" " + c_name + "=");
+								
+								if( c_start == -1 ) {
+									c_start = c_value.indexOf(c_name + "=");
+								}
+								
+								if( c_start == -1 ) {
+									c_value = null;
+								} else {
+									c_start = c_value.indexOf("=", c_start) + 1;
+									var c_end = c_value.indexOf(";", c_start);
+									
+									if( c_end == -1 ) {
+										c_end = c_value.length;
+									}
+									
+									c_value = unescape(c_value.substring(c_start,c_end));
+								}
+								
+								return c_value;
+							}
+							
+							$info.find('.cookie-btn-yes').click(function(){
+								var exdate	= new Date(),
+									value	= '1',
+									name	= 'cookie_law';
+								
+								exdate.setDate(exdate.getDate() + 365);
+								
+								value = escape( value ) + "; path=/; expires="+exdate.toUTCString();
+								
+								document.cookie=name + "=" + value;
+								
+								$info.hide();
+								
+								return false;
+							});
+							
+							$info.find('.cookie-btn-no').click(function(){
+								var href = $(this).attr('href');
+								
+								clearCookies();
+								
+								if( href == '' || href == '#' ) {
+									$info.hide();
+									
+									return false;
+								}
+							});
+						})();
+					</script>
+				<?php } ?>
+			]]></add>
+		</operation>
+	</file>
+</modification>

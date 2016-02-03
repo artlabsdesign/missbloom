@@ -1,0 +1,90 @@
+<modification>
+
+	<id>Options Price Update Redux</id>
+	<version>1.0.1</version>
+	<vqmver>2.1.5</vqmver>
+	<author>qphoria</author>
+
+	
+	<file name="catalog/view/theme/megastore/template/product/product.tpl" error="skip">
+		<operation error="skip"><!-- Fix for megastore theme stupid coding format -->
+            <search position="replace"><![CDATA[
+            <?php echo '<span class="price-new">'.$price.'</span>'; ?>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <span class="price-new"><?php echo $price; ?></span>
+            ]]></add>
+        </operation>
+	</file>
+	
+	<file name="catalog/view/theme/*/template/product/product.tpl">
+
+		<operation error="skip"><!-- 1.4.x & 1.5.0.5+ only -->
+            <search position="replace"><![CDATA[
+            <?php echo $price; ?>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <span id="opu_price"><?php echo $price; ?></span>
+            ]]></add>
+        </operation>
+		
+        <operation error="skip"><!-- 1.5.0 only -->
+            <search position="replace" index="1"><![CDATA[
+            <span style="text-decoration: line-through;"><?php echo $price; ?></span>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <span id="opu_price" style="text-decoration: line-through;"><?php echo $price; ?></span>
+            ]]></add>
+        </operation>
+
+
+        <operation error="skip"><!-- 1.5.0 only -->
+            <search position="replace" index="1"><![CDATA[
+            <s><?php echo $price; ?></s>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <s id="opu_price"><?php echo $price; ?></s>
+            ]]></add>
+        </operation>
+
+        <operation error="skip">
+            <search position="replace" index="1"><![CDATA[
+            <?php echo $special; ?>
+            ]]></search>
+            <add><![CDATA[
+            <span id="opu_special"><?php echo $special; ?></span>
+            ]]></add>
+        </operation>
+
+        <operation error="skip">
+            <search position="replace" index="1"><![CDATA[
+            <?php echo $tax; ?>
+            ]]></search>
+            <add trim="true"><![CDATA[
+            <span id="opu_tax"><?php echo $tax; ?></span>
+            ]]></add>
+        </operation>
+
+
+        
+
+
+		<!-- IF YOU WANT TO HIDE THE OPTION PRICE NEXT TO THE OPTION, UNCOMMENT THIS BLOCK -->
+		<!-- TO UNCOMMENT, REMOVE THE ARROWS AND DASHES THAT SURROUND THE CODE BELOW -->
+		
+		
+		<!--
+		<operation>
+            <search position="replace"><![CDATA[
+            <?php if ($option_value['price']) { ?>
+            ]]></search>
+            <add><![CDATA[
+            <?php if (1==2) { ?>
+            ]]></add>
+        </operation>
+		-->
+
+
+	</file>
+
+</modification>

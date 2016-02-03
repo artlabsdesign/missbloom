@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<id>NitroPack Image Cache and Smush</id>
+	<version>2.0</version>
+	<vqmver>2.x</vqmver>
+	<author>iSenseLabs | http://isenselabs.com</author>
+	<file name="system/library/image.php">
+		<operation info="Overriding the JPEG compression" error="log">
+			<search position="after"><![CDATA[public function save]]></search>
+			<add><![CDATA[
+				require_once DIR_SYSTEM . 'nitro/core/core.php';
+				require_once NITRO_INCLUDE_FOLDER . 'image_quality_override.php';
+			]]></add>
+		</operation>
+	</file>
+	
+	<file error="skip" name="catalog/controller/product/smp_image.php">
+        <operation error="skip">
+            <search position="replace" offset="1"><![CDATA[header('Cache-Control: max-age=86400');]]></search>
+            <add><![CDATA[
+                require_once DIR_SYSTEM . 'nitro/core/core.php';
+                if (getNitroPersistence('BrowserCache.Images.Period') != 'no-cache') {
+                    $maxage = getNitroPersistence('BrowserCache.Images.Period');
+                    header('Cache-Control: max-age=' . (string)(strtotime($maxage)-time()));
+                    header('Expires: '. gmdate('D, d M Y H:i:s \G\M\T', strtotime($maxage)));
+                    header('Last-Modified: Wed, 05 Jun 2009 06:40:46 GMT');
+                }
+            ]]></add>
+        </operation>
+    </file>
+
+	<file name="catalog/model/tool/image.php">
+        <operation error="skip">
+            <search position="replace"><![CDATA[$image->save(DIR_IMAGE . $new_image, $quality);]]></search>
+            <add><![CDATA[{ $image->save(DIR_IMAGE . $new_image);
+                require_once DIR_SYSTEM . 'nitro/core/core.php';
+                include NITRO_INCLUDE_FOLDER . 'smush_on_demand.php';
+            }
+            ]]></add>
+        </operation>
+
+        <operation error="log">
+            <search position="replace"><![CDATA[$image->save(DIR_IMAGE . $new_image);]]></search>
+            <add><![CDATA[{ $image->save(DIR_IMAGE . $new_image);
+                require_once DIR_SYSTEM . 'nitro/core/core.php';
+                include NITRO_INCLUDE_FOLDER . 'smush_on_demand.php';
+            }
+            ]]></add>
+        </operation>
+        
+        <operation error="skip">
+            <search position="after"><![CDATA[copy(DIR_IMAGE . $old_image, DIR_IMAGE . $new_image);]]></search>
+            <add><![CDATA[
+                require_once DIR_SYSTEM . 'nitro/core/core.php';
+                include NITRO_INCLUDE_FOLDER . 'smush_on_demand.php';
+            ]]></add>
+        </operation>
+    </file>
+</modification>

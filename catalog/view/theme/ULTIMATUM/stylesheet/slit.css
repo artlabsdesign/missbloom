@@ -1,0 +1,17 @@
+#fullscreen_slider #slides ul {
+	margin:0;
+	padding:0;
+}
+#fullscreen_slider #slides li {
+	list-style:none !important;
+	z-index:1;
+	position:relative;
+}
+#fullscreen_slider #slides li img {
+	z-index:2;
+	position:relative;
+}
+#fullscreen_slider #slides li .inner {
+	z-index:3;
+	position:relative;
+}

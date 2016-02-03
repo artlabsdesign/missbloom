@@ -1,0 +1,72 @@
+<modification>
+	<id>Short checkout</id>
+	<version>1.5.x</version>
+	<vqmver>1.0.8</vqmver>
+	<author>ocprofi</author>
+	<file name="catalog/controller/module/cart.php">
+		<operation>
+			<search position="replace" error="skip"><![CDATA[$this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');]]></search>
+			<add><![CDATA[
+                        if($this->config->get('config_short_checkout_status')){
+                            $this->data['checkout'] = $this->url->link('checkout/buy', '', 'SSL').'#checkout-form';
+                        }else{
+                            $this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+                        }
+                        ]]></add>
+		</operation>
+		<operation>
+			<search position="replace" error="skip"><![CDATA[$this->data['cart'] = $this->url->link('checkout/cart');]]></search>
+			<add><![CDATA[
+                        if($this->config->get('config_short_checkout_status')){
+                            $this->data['cart'] = $this->url->link('checkout/buy');
+                        }else{
+                            $this->data['cart'] = $this->url->link('checkout/cart');
+                        }
+                        ]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/common/header.php">
+		<operation>
+			<search position="replace" error="skip"><![CDATA[$this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');]]></search>
+			<add><![CDATA[
+                        if($this->config->get('config_short_checkout_status')){
+                            $this->data['checkout'] = $this->url->link('checkout/buy', '', 'SSL').'#checkout-form';
+                        }else{
+                            $this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+                        }
+                        ]]></add>
+		</operation>
+		<operation>
+			<search position="replace" error="skip"><![CDATA[$this->data['shopping_cart'] = $this->url->link('checkout/cart');]]></search>
+			<add><![CDATA[
+                        if($this->config->get('config_short_checkout_status')){
+                            $this->data['shopping_cart'] = $this->url->link('checkout/buy');
+                        }else{
+                            $this->data['shopping_cart'] = $this->url->link('checkout/cart');
+                        }
+                        ]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/checkout/cart.php">
+		<operation>
+			<search position="replace" error="skip"><![CDATA[$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));]]></search>
+			<add><![CDATA[
+                        if($this->config->get('config_short_checkout_status')){
+                            $json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/buy'));
+                        }else{
+                            $json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
+                        }
+                        ]]></add>
+		</operation>
+	</file>
+	<file name="catalog/model/checkout/order.php">
+		<operation>
+			<search position="before" index="1" error="skip"><![CDATA[$mail = new Mail();]]></search>
+			<add><![CDATA[if($order_info['email']){]]></add>
+		</operation>
+		<operation>
+			<search position="after" index="1" error="skip"><![CDATA[$mail->send();]]></search>
+			<add><![CDATA[}]]></add>
+		</operation>
+	</file>
+</modification>

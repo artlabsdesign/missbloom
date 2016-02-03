@@ -1,0 +1,8 @@
+.tipsy { padding: 5px; font-size: 14px; filter: alpha(opacity=80); background-repeat: no-repeat;  background-color: #fff;background-image: url('tipsy-light.gif');
+color: #454545; font:14px "Trebuchet MS", Arial, Helvetica, sans-serif; }
+  .tipsy-inner { border: 1px solid #E2E2E2;padding: 8px 15px; background-color: #fff; color: #454545; max-width: 350px; text-align: left; }
+  .tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
+  .tipsy-north { background-position: top center; }
+  .tipsy-south { background-position: bottom center; }
+  .tipsy-east { background-position: right center; }
+  .tipsy-west { background-position: left center; }

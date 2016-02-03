@@ -1,0 +1,272 @@
+---------- Date: 2016-01-21 08:16:46 ~ IP : 66.249.81.205 ----------
+REQUEST URI : /admin-mb/
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/admin_header_notices.xml
+   id        : Admin Header Notices 1.0 - OcStore 1.5.1.x-1.5.6.x
+   version   : 1.0
+   vqmver    : 2.1
+   author    : TOM
+
+File Name    : admin-mb/language/russian/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_zone']                        = 'Регионы';
+
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/nitro.xml
+   id        : NitroPack
+   version   : 2.0
+   vqmver    : 2.x
+   author    : iSenseLabs | http://isenselabs.com
+
+File Name    : admin-mb/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li><li class="divider"></li>
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 17:31:11 ~ IP : 81.95.130.210 ----------
+REQUEST URI : /wedding/bukety-dlya-nevesty/buket-nevesti-s-ranunkulusami
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/ajax_checkout.xml
+   id        : AjaxCheckout
+   version   : 1.0
+   vqmver    : 1.1.0
+   author    : 
+VQModObject::parseMods - Could not resolve path for [catalog/controller/module/filterpro.php] (SKIPPED)
+
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_admin.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/header.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/header.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/language/english/english.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/language/english/common/header.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/localisation/language.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/controller/catalog/product.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/catalog/product.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/catalog/product_form.tpl] (SKIPPED)
+
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/faq.xml
+   id        : FAQ for OpenCart 1.5.1.x
+   version   : 1.0.0
+   vqmver    : 1.2.3
+   author    : Fido-X
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/header.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/header.tpl] (SKIPPED)
+
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/generate_sitemap.xml
+   id        : generate sitemap - OpenCart 1.5.4.x core file modifications
+   version   : 1.5.4.x
+   vqmver    : 1.1.0
+   author    : Jack 357878360@qq.com
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/header.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/header.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/catalog/category.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/catalog/product.php] (SKIPPED)
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/homepage.xml
+   id        : Homepage Module for OpenCart 1.5.1.x
+   version   : 1.0.0
+   vqmver    : 1.2.3
+   author    : Fido-X
+VQModObject::parseMods - Could not resolve path for [admin/controller/common/header.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/header.tpl] (SKIPPED)
+
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/multilingual_seo.xml
+   id        : Complete SEO Package
+   version   : 2.1.0 for 1.5.2 to 1.5.6
+   vqmver    : 2.2.1
+   author    : Sirius-Dev
+VQModObject::parseMods - Could not resolve path for [admin/controller/catalog/category.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/controller/catalog/information.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/controller/catalog/product.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/catalog/category.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/catalog/product.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/catalog/information.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/model/catalog/manufacturer.php] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/catalog/category_form.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/catalog/product_form.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/catalog/information_form.tpl] (SKIPPED)
+VQModObject::parseMods - Could not resolve path for [admin/view/template/common/header.tpl] (SKIPPED)
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/vqmod_ULTIMATUMTheme.xml
+   id        : ULTIMATUM - Professional Responsive OpenCart theme
+   version   : 1.0
+   vqmver    : 2.1.0
+   author    : Dimitar Koev
+
+File Name    : catalog/controller/common/seo_url.php(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/buy.xml
+   id        : Short checkout
+   version   : 1.5.x
+   vqmver    : 1.0.8
+   author    : ocprofi
+
+File Name    : catalog/controller/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 17:31:17 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /compositions/ajvori
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 17:32:48 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /compositions/ajvori
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 17:32:55 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /index.php?route=checkout/cart/add
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/buy.xml
+   id        : Short checkout
+   version   : 1.5.x
+   vqmver    : 1.0.8
+   author    : ocprofi
+
+File Name    : catalog/controller/checkout/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 17:33:28 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /compositions/ajvori
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 17:36:14 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /compositions/ajvori
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 17:42:27 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /compositions/ajvori
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 17:42:35 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /index.php?route=checkout/cart/add
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/buy.xml
+   id        : Short checkout
+   version   : 1.5.x
+   vqmver    : 1.0.8
+   author    : ocprofi
+
+File Name    : catalog/controller/checkout/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 19:49:17 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /index.php?route=checkout/cart/add
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/buy.xml
+   id        : Short checkout
+   version   : 1.5.x
+   vqmver    : 1.0.8
+   author    : ocprofi
+
+File Name    : catalog/controller/checkout/cart.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $json['success'] = sprintf($this->language->get('text_success'), $this->url->link('product/product', 'product_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 19:49:30 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /cveti/anemone/anemon-sinij
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-21 20:25:16 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /admin-mb/
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/admin_header_notices.xml
+   id        : Admin Header Notices 1.0 - OcStore 1.5.1.x-1.5.6.x
+   version   : 1.0
+   vqmver    : 2.1
+   author    : TOM
+
+File Name    : admin-mb/language/russian/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $_['text_zone']                        = 'Регионы';
+
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/nitro.xml
+   id        : NitroPack
+   version   : 2.0
+   vqmver    : 2.x
+   author    : iSenseLabs | http://isenselabs.com
+
+File Name    : admin-mb/view/template/common/header.tpl(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): <li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li><li class="divider"></li>
+----------------------------------------------------------------------
+
+

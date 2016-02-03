@@ -1,0 +1,1 @@
+{"smushed_images_count":16,"already_smushed_images_count":0,"total_images":16,"kb_saved":17.36,"last_smush_timestamp":1412699585,"smushed_files":[{"filename":"\/var\/www\/artlabs_root\/data\/www\/missbloom.ru\/image\/cache\/data\/\u043e\u0442\u0437\u044b\u0432\u044b\/woman_flowers-70x70.jpg","percent":8.82}],"messages":[]}

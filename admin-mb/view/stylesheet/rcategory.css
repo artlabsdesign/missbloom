@@ -1,0 +1,108 @@
+.double_select a { 
+	background-color: #EFEFEF;
+	border: 1px solid #AAAAAA;
+	color: #123456;
+	display: block;
+	margin: 2px 0;
+	padding: 2px;
+	text-align: center;
+	text-decoration: none;
+}
+
+.double_select {margin:5px 0;}
+/*#toast-container > .toast-success  {background-color:#000;opacity:.8;}*/		
+
+select[multiple] {min-width:350px;}
+select[multiple] option:nth-child(2n){background-color:#EFEFEF;}
+#rcategory_limit input {display:block;height:11px;font-size:12px;padding:0}
+
+.hint { 
+	background: url("../image/icon-info.png") 6px 5px no-repeat #BDE5F8;
+	border: 1px solid #00529B;
+	border-radius: 3px;
+	color: #00529B;
+	display: none;
+	margin-bottom: 2px;
+	margin-top: 4px;
+	min-height: 15px;
+	padding: 15px 5px 15px 40px;
+	position: absolute;
+	z-index: 10;
+	font-size:11px;
+}
+	
+#toast-container > div {width:100%;min-width:300px;}	
+
+.hidden {
+	display: none;
+}
+#opaco {
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+	 width: 100%;
+	 z-index: 10;
+}
+#popup {
+	background-color: #FFF;
+	z-index: 100;
+	padding: 5px 8px 10px;
+	min-width: 300px;
+	-webkit-box-shadow: 0px 0px 3px 0px rgba(149,149,149,0.5);
+	-moz-box-shadow: 0px 0px 3px 0px rgba(149,149,149,0.5);
+	box-shadow:  0px 0px 5px 1px rgba(149,149,149,0.5);
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	-khtml-border-radius: 7px;
+}
+
+.close-btn {
+	position: absolute;
+	right: 7px;
+	top: 1px;
+	text-decoration: none;
+	color: red;
+	font-size: 20px;
+	text-decoration:none !important;
+}
+
+.head {
+	text-align: center;
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom:15px;
+}
+
+a[id^=owl_settings], a[id^=show_link_settings]{color:#666666;border-bottom: 1px dashed;text-decoration:none !important;}
+
+.owl_settings {text-align:left;}
+.owl_settings table {display: inline-table;}
+.owl_settings span {display:block;}
+.owl_settings th {text-align:center;line-height:22px;}
+.owl_settings td {border:none;}
+	
+.show_link_settings {
+	position:absolute;
+	display:none;
+	top:-100px;
+	left:-80px;
+	border:2px solid #AAA;
+	background:#fff;
+	padding:15px;
+	box-shadow: 35px 45px 5px 5px rgba(0, 0, 0, 0.506);
+}	
+div[id^=show_link_settings_body]{position:relative;}	
+
+.lang {height:20px;}
+.lang a {padding:2px 5px !important;}	
+	
+.todo {text-align:center;font-size:18px;margin:10px 0;padding: 10px 0;background:red;}	
+
+#limit {display:none;}
+
+.image_row {white-space:nowrap;}
+.image_row input {width:20px;}
+.sort_row input {width:15px;}
+.button.empty {background:red;}
+#show_pcount {text-align:left;margin-top:5px;}

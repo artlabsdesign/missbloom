@@ -1,0 +1,145 @@
+<?php
+// Heading
+$_['heading_title']       = '<span style="color:#ff0551;">ULTIMATUM</span> Layer Slider'; 
+$_['doc_title']       = 'ULTIMATUM Layer Slider';
+// Text
+$_['text_module']         = 'Modules';
+$_['text_success']        = 'Success: You have modified module ULTIMATUMLayerSlider!';
+$_['text_content_top']    = 'Content Top';
+$_['text_content_bottom'] = 'Content Bottom';
+$_['text_column_left']    = 'Column Left';
+$_['text_column_right']   = 'Column Right';
+
+// Entry
+$_['entry_layout']        = 'Layout:';
+$_['entry_position']      = 'Position:';
+$_['entry_status']        = 'Status:';
+$_['entry_sort_order']    = 'Sort Order:';
+$_['entry_language']      = 'Language:';
+$_['text_duplicate']      = 'Duplicate';
+
+
+// Error
+$_['error_permission']    = 'Warning: You do not have permission to modify module ULTIMATUMLayerSlider!';
+
+//Parameters
+$_['ULTIMATUM_Layer_Slider_setting_slider']    = 'Slider setting';
+$_['ULTIMATUM_Layer_Slider_setting_slide']    = 'Slides setting';
+$_['ULTIMATUM_Layer_Slider_setting_layer']    = 'Layers setting';
+$_['ULTIMATUM_Layer_Slider_width']    = 'Slider width';
+$_['ULTIMATUM_Layer_Slider_height']    = 'Slider height';
+$_['ULTIMATUM_Layer_Slider_responsive']  = 'Responsive';
+$_['ULTIMATUM_Layer_Slider_full_width']    = 'Full-width slider';
+$_['ULTIMATUM_Layer_Slider_responsive_under']    = 'Responsive under';
+$_['ULTIMATUM_Layer_Slider_layers_container']    = 'Layers Container';
+$_['ULTIMATUM_Layer_Slider_autostart']    = 'Automatically start slideshow';
+$_['ULTIMATUM_Layer_Slider_pause_on_hover']    = 'Pause on hover';
+$_['ULTIMATUM_Layer_Slider_first_slide']    = 'First slide';
+$_['ULTIMATUM_Layer_Slider_anim_first_slide']    = 'Animate first slide';
+$_['ULTIMATUM_Layer_Slider_random_slideshow']    = 'Random slideshow';
+$_['ULTIMATUM_Layer_Slider_two_way_slideshow']    = 'Two way slideshow';
+$_['ULTIMATUM_Layer_Slider_loops']    = 'Loops';
+$_['ULTIMATUM_Layer_Slider_force_loops']    = 'Force the number of loops';
+$_['ULTIMATUM_Layer_Slider_auto_video']    = 'Automatically play videos';
+$_['ULTIMATUM_Layer_Slider_auto_pause']    = 'Automatically pause slideshow';
+$_['ULTIMATUM_Layer_Slider_youtube']    = 'Youtube preview';
+$_['ULTIMATUM_Layer_Slider_keyboard']    = 'Keyboard navigation';
+$_['ULTIMATUM_Layer_Slider_touch']    = 'Touch navigation';
+$_['ULTIMATUM_Layer_Slider_skin']    = 'Skin';
+$_['ULTIMATUM_Layer_Slider_background_color']    = 'Background color';
+$_['ULTIMATUM_Layer_Slider_background_image']    = 'Background image';
+$_['ULTIMATUM_Layer_Slider_slider_style']    = 'Slider Style';
+$_['ULTIMATUM_Layer_Slider_prev_next']    = 'Prev and Next buttons';
+$_['ULTIMATUM_Layer_Slider_start_stop']    = 'Start and Stop buttons';
+$_['ULTIMATUM_Layer_Slider_nav_buttons']    = 'Navigation buttons';
+$_['ULTIMATUM_Layer_Slider_prev_next_hover']    = 'Prev and next buttons on hover';
+$_['ULTIMATUM_Layer_Slider_nav_buttons_hover']    = 'Bottom navigation on hover	';
+$_['ULTIMATUM_Layer_Slider_thumb_nav']    = 'Thumbnail navigation';
+$_['ULTIMATUM_Layer_Slider_thumb_width']    = 'Thumbnail width';
+$_['ULTIMATUM_Layer_Slider_thumb_height']    = 'Thumbnail height';
+$_['ULTIMATUM_Layer_Slider_thumb_container_width']    = 'Thumbnail container width';
+$_['ULTIMATUM_Layer_Slider_thumb_active_opacity']    = 'Thumbnail active opacity';
+$_['ULTIMATUM_Layer_Slider_thumb_inactive_opacity']    = 'Thumbnail inactive opacity';
+$_['ULTIMATUM_Layer_Slider_img_preload']    = 'Image preload';
+$_['ULTIMATUM_Layer_Slider_use_urls']    = 'Use relative URLs';
+$_['ULTIMATUM_Layer_Slider_your_import']    = 'Import';
+$_['ULTIMATUM_Layer_Slider_your_export']    = 'Export';
+$_['ULTIMATUM_Layer_Slider_your_review']    = 'Select file';
+$_['ULTIMATUM_Layer_Slider_slide_options']    = 'Slide Options';
+$_['ULTIMATUM_Layer_Slider_image']    = 'Image';
+$_['ULTIMATUM_Layer_Slider_thumbnail']    = 'Thumbnail';
+$_['ULTIMATUM_Layer_Slider_slide_delay']    = 'Slide delay (ms)';
+$_['ULTIMATUM_Layer_Slider_slide_transition']    = 'Slide Transition';
+$_['ULTIMATUM_Layer_Slider_use_3d_2d']    = 'Use 3D/2D';
+$_['ULTIMATUM_Layer_Slider_transitions']    = 'Transitions';
+$_['ULTIMATUM_Layer_Slider_select_transitions']    = 'Click to select';
+$_['ULTIMATUM_Layer_Slider_direction']    = 'Direction';
+$_['ULTIMATUM_Layer_Slider_time_shift']    = 'Time shift (ms)';
+$_['ULTIMATUM_Layer_Slider_slide_in']    = 'Slide In';
+$_['ULTIMATUM_Layer_Slider_slide_out']    = 'Slide Out';
+$_['ULTIMATUM_Layer_Slider_link_this_slide']    = 'Link this slide';
+$_['ULTIMATUM_Layer_Slider_duration']    = 'Duration (ms)';
+$_['ULTIMATUM_Layer_Slider_easing']    = '<a href="http://easings.net/">Easing</a>';
+$_['ULTIMATUM_Layer_Slider_delay_in']    = 'Delay in (ms)';
+$_['ULTIMATUM_Layer_Slider_delay_out']    = 'Delay out (ms)';
+$_['ULTIMATUM_Layer_Slider_link_url']    = 'Link URL';
+$_['ULTIMATUM_Layer_Slider_link_target']    = 'Link target';
+$_['ULTIMATUM_Layer_Slider_misc']    = 'Misc';
+$_['ULTIMATUM_Layer_Slider_deeplink']    = 'Deeplink';
+$_['ULTIMATUM_Layer_Slider_id']    = 'ID';
+$_['ULTIMATUM_Layer_Slider_name']    = 'Name';
+$_['ULTIMATUM_Layer_Slider_hidden']    = 'Hidden';
+$_['ULTIMATUM_Layer_Slider_enter_preview']    = 'Enter Preview';
+$_['ULTIMATUM_Layer_Slider_exit_preview']    = 'Exit Preview';
+$_['ULTIMATUM_Layer_Slider_custom_html']    = 'Custom HTML content';
+$_['ULTIMATUM_Layer_Slider_transition_in']    = 'Transition In';
+$_['ULTIMATUM_Layer_Slider_transition_out']    = 'Transition Out';
+$_['ULTIMATUM_Layer_Slider_other_options']    = 'Other Options';
+$_['ULTIMATUM_Layer_Slider_type']    = 'Type';
+$_['ULTIMATUM_Layer_Slider_distance']    = 'Distance';
+$_['ULTIMATUM_Layer_Slider_delay']    = 'Delay (ms)';
+$_['ULTIMATUM_Layer_Slider_show_until']    = 'Show Until (ms)';
+$_['ULTIMATUM_Layer_Slider_url']    = 'URL';
+$_['ULTIMATUM_Layer_Slider_layout_positions']    = 'Layout & Positions';
+$_['ULTIMATUM_Layer_Slider_width']    = 'Width';
+$_['ULTIMATUM_Layer_Slider_height']    = 'Height';
+$_['ULTIMATUM_Layer_Slider_top']    = 'Top';
+$_['ULTIMATUM_Layer_Slider_left']    = 'Left';
+$_['ULTIMATUM_Layer_Slider_right']    = 'Right';
+$_['ULTIMATUM_Layer_Slider_bottom']    = 'Bottom';
+$_['ULTIMATUM_Layer_Slider_padding']    = 'Padding';
+$_['ULTIMATUM_Layer_Slider_border']    = 'Border';
+$_['ULTIMATUM_Layer_Slider_font']    = 'Font';
+$_['ULTIMATUM_Layer_Slider_misc']    = 'Misc';
+$_['ULTIMATUM_Layer_Slider_family']    = 'Family';
+$_['ULTIMATUM_Layer_Slider_rounded_corners']    = 'Rounded corners';
+$_['ULTIMATUM_Layer_Slider_word_wrap']    = 'Word-wrap';
+$_['ULTIMATUM_Layer_Slider_size']    = 'Size';
+$_['ULTIMATUM_Layer_Slider_color']    = 'Color';
+$_['ULTIMATUM_Layer_Slider_line_height']    = 'Line-height';
+$_['ULTIMATUM_Layer_Slider_custom_style']    = 'Custom style settings';
+$_['ULTIMATUM_Layer_Slider_attributes']    = 'Attributes';
+$_['ULTIMATUM_Layer_Slider_classes']    = 'Classes';
+$_['ULTIMATUM_Layer_Slider_title']    = 'Title';
+$_['ULTIMATUM_Layer_Slider_alt']    = 'Alt';
+$_['ULTIMATUM_Layer_Slider_rel']    = 'Rel';
+
+$_['ULTIMATUM_Layer_Slider_module']    = 'Module';
+$_['ULTIMATUM_Layer_Slider_add_new_module']    = 'Add new module';
+$_['ULTIMATUM_Layer_Slider_basic']    = 'Basic';
+$_['ULTIMATUM_Layer_Slider_slideshow']    = 'Slideshow';
+$_['ULTIMATUM_Layer_Slider_appearance']    = 'Appearance';
+$_['ULTIMATUM_Layer_Slider_navigation']    = 'Navigation';
+$_['ULTIMATUM_Layer_Slider_misc_yourlogo']    = 'Misc settings';
+$_['ULTIMATUM_Layer_Slider_import_export']    = 'Import/Export';
+$_['ULTIMATUM_Layer_Slider_slide']    = 'Slide';
+$_['ULTIMATUM_Layer_Slider_add_new_slide']    = 'Add new slide';
+$_['ULTIMATUM_Layer_Slider_preview']    = 'Preview';
+$_['ULTIMATUM_Layer_Slider_layers']    = 'Layers';
+$_['ULTIMATUM_Layer_Slider_layer']    = 'Layer';
+$_['ULTIMATUM_Layer_Slider_add_new_layer']    = 'Add new layer';
+$_['ULTIMATUM_Layer_Slider_options']    = 'Options';
+$_['ULTIMATUM_Layer_Slider_link']    = 'Link';
+$_['ULTIMATUM_Layer_Slider_style']    = 'Style';
+
+?>

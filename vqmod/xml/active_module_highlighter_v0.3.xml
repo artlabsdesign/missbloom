@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>Active module highlighter</id>
+	<version>0.3</version>
+	<vqmver></vqmver>
+	<author>Shashakhmetov Talgat [talgatks@gmail.com]</author>
+	<file name="admin-mb/view/template/extension/module.tpl,admin-mb/view/template/extension/shipping.tpl,admin-mb/view/template/extension/module.tpl,admin-mb/view/template/extension/payment.tpl,admin-mb/view/template/extension/total.tpl,admin-mb/view/template/extension/feed.tpl">
+		<operation error="log">
+			<search position="replace" offset="1"><![CDATA[<?php foreach ($extensions as $extension) { ?>]]></search>
+			<add><![CDATA[<style>.list tbody tr:nth-child(2n), .list tbody td{background:none}.highlight{background:#f4ffed !important;border-left: 5px solid #b1db95 !important; border-right: 5px solid #b1db95 !important;}</style><?php foreach ($extensions as $extension) { ?>
+          <tr<?php echo (count($extension['action']) >= 2)?' class="highlight"':''; ?>>]]></add>
+		</operation>
+	</file>
+	<file name="admin-mb/view/template/common/footer.tpl">
+		<operation error="skip">
+			<search position="replace" offset="4"><![CDATA[<script type="text/javascript"><!--]]></search>
+			<add><![CDATA[]]></add>
+		</operation>
+	</file>
+</modification>

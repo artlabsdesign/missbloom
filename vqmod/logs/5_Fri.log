@@ -1,0 +1,60 @@
+---------- Date: 2016-01-22 15:47:35 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /cveti/anemone/anemon-sinij
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-22 15:48:48 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /cveti/anemone/anemon-sinij
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-22 15:52:39 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /cveti/anemone/anemon-sinij
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+
+---------- Date: 2016-01-22 15:57:02 ~ IP : 91.78.161.161 ----------
+REQUEST URI : /cveti/anemone/anemon-sinij
+MOD DETAILS:
+   modFile   : /var/www/artlabs_root/data/www/missbloom.ru/vqmod/xml/extra_product_tab_catalog.xml
+   id        : Additional Product Tabs
+   version   : 1.0.3
+   vqmver    : 2.2.1
+   author    : Godfrey Livinstone
+
+File Name    : catalog/view/theme/*/template/product/product.tpl(5)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): <div id="tab-description" class="tab-content" itemprop="description"><?php echo $description; ?></div>
+
+----------------------------------------------------------------------
+
+

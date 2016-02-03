@@ -1,0 +1,161 @@
+#AjaxAutoSuggest #ajax_content{
+	margin-bottom: 0px !important;
+	min-height: 100px !important;
+}
+
+#AjaxAutoSuggest #ajax_content .content{
+	margin-bottom: 0px !important;
+	border: none;
+	overflow: hidden !important;
+}
+
+#AjaxAutoSuggest #ajax_content .buttons{
+	margin-bottom: 0px !important;
+	background: none;
+}
+
+/* button */
+#AjaxAutoSuggest #ajax_content  .cart a {
+	font-size:11px;
+	text-transform:uppercase;
+	text-decoration:none;
+	padding:5px 8px;
+	background-color:#333333;
+	color:#ffffff;
+	cursor:pointer;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+}
+
+
+/* start autosuggest search */
+#AjaxAutoSuggestContent #ajax_content .content{
+	margin: 0;
+	padding: 0;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list {
+	overflow:auto;
+}
+
+/* autosuggest search result */
+#AjaxAutoSuggestContent .autosuggest-list > div {
+	overflow: auto;
+	padding: 3px 3px;
+	background: #fff;
+}
+
+
+#AjaxAutoSuggestContent .autosuggest-list > div.no-borders {
+	overflow: auto;
+	margin-bottom: 15px;
+	padding: 0;
+	background: #fff;
+	border: none;
+	border-radius: none;
+}
+#AjaxAutoSuggestContent .autosuggest-list .left {
+	float: left;
+	margin-left: 15px;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list .right {
+	float: left;
+	margin-left: 15px;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list > div + div {
+	border-top: 1px solid #EEEEEE;
+	padding-top: 3px;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list .image {
+	float: left;
+	margin-right: 10px;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list .image img {
+	padding: 3px;
+}
+#AjaxAutoSuggestContent .autosuggest-list .name {
+	margin-bottom: 2px;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list .name a {
+	font-size:12px;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list .description {
+	line-height: 15px;
+	margin-bottom: 10px;
+	color: #4D4D4D;
+	font-size: 11px;
+}
+#AjaxAutoSuggestContent .autosuggest-list .rating {
+	color: #7B7B7B;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list .price {
+	float: left;
+	text-align: left;
+	font-weight:bold;
+	font-size: 12px;
+	padding: 5px 0;
+	overflow: auto;
+	color: #333333;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list .price-old {
+	text-decoration: line-through;
+	color: #999999;
+}
+#AjaxAutoSuggestContent .autosuggest-list .price-new {
+	font-weight: bold;
+	color: #333333;
+}
+
+#AjaxAutoSuggestContent .autosuggest-list .cart {
+    float:right;
+	margin: 0 5px 0 10px;
+}
+/* stop autosuggest search */
+
+.highlight { 
+	font-weight: bold;
+	background-color:#fff3ac;
+}
+
+/* POPUP */
+
+#AjaxAutoSuggest{
+	display:none;
+	position:absolute;
+	right:0;
+	background:#FFFFFF;
+	z-index:30000;
+	padding:5px;
+	font-size:13px;
+	width:290px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+#AjaxAutoSuggest h1{
+	text-align:left;
+	color:#6FA5FD;
+	font-size:22px;
+	font-weight:700;
+	border-bottom: 1px solid #f8f8f8;
+	padding-bottom:2px;
+	margin-bottom:20px;
+}
+#autosuggest-results-count {
+	border-bottom: 1px solid #f8f8f8;
+	text-align: center;
+	padding-bottom:8px;
+}

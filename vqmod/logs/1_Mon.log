@@ -1,0 +1,24 @@
+---------- Date: 2016-02-01 19:35:45 ~ IP : ::1 ----------
+REQUEST URI : /missbloom/index.php
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\missbloom\vqmod/xml/vqmod_ULTIMATUMTheme.xml
+   id        : ULTIMATUM - Professional Responsive OpenCart theme
+   version   : 1.0
+   vqmver    : 2.1.0
+   author    : Dimitar Koev
+
+File Name    : catalog/controller/common/seo_url.php(2)
+VQModObject::applyMod - SEARCH NOT FOUND (SKIPPED): if (($data['route'] == 'product/product' && $key == 'product_id') || (($data['route'] == 'product/manufacturer/info' || $data['route'] == 'product/product') && $key == 'manufacturer_id') || ($data['route'] == 'information/information' && $key == 'information_id')) {
+
+MOD DETAILS:
+   modFile   : C:\xampp\htdocs\missbloom\vqmod/xml/buy.xml
+   id        : Short checkout
+   version   : 1.5.x
+   vqmver    : 1.0.8
+   author    : ocprofi
+
+File Name    : catalog/controller/common/header.php(0)
+VQModObject::applyMod - SEARCH NOT FOUND (ABORTING MOD): $this->data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+----------------------------------------------------------------------
+
+

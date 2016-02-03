@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<id>NitroPack</id>
+	<version>2.0</version>
+	<vqmver>2.x</vqmver>
+	<author>iSenseLabs | http://isenselabs.com</author>
+
+	<file name="admin-mb/view/template/common/header.tpl">
+		<operation>
+			<search position="after"><![CDATA[<li><a href="http://forum.opencart.com" target="_blank"><?php echo $text_support; ?></a></li><li class="divider"></li>]]></search>
+			<add><![CDATA[
+	<?php if ($this->user->hasPermission('access', 'tool/nitro')) { ?>
+            <li><a href="index.php?route=tool/nitro&token=<?php echo $_GET['token']; ?>">Settings</a></li>
+            <li><a class="dropdown">Clear Cache</a>
+		    <ul class="dropdown-menu">
+                <li style="border-bottom:1px dashed #888;"><a href="javascript:void(0)" onclick="document.location='index.php?route=tool/nitro/clearnitrocaches&token=<?php echo $_GET['token']; ?>'">Clear Nitro Cache</a></li>
+                <li><a href="javascript:void(0)" onclick="document.location='index.php?route=tool/nitro/clearpagecache&token=<?php echo $_GET['token']; ?>'">Clear Page Cache</a></li>
+                <li><a href="javascript:void(0)" onclick="document.location='index.php?route=tool/nitro/cleardbcache&token=<?php echo $_GET['token']; ?>'">Clear Database Cache</a></li>
+                <li><a href="javascript:void(0)" onclick="document.location='index.php?route=tool/nitro/clearsystemcache&token=<?php echo $_GET['token']; ?>'">Clear System Cache</a></li>
+                <li><a href="javascript:void(0)" onclick="document.location='index.php?route=tool/nitro/clearimagecache&token=<?php echo $_GET['token']; ?>'">Clear Image Cache</a></li>
+                <li><a href="javascript:void(0)" onclick="document.location='index.php?route=tool/nitro/clearcsscache&token=<?php echo $_GET['token']; ?>'">Clear CSS Cache</a></li>
+                <li><a href="javascript:void(0)" onclick="document.location='index.php?route=tool/nitro/clearjscache&token=<?php echo $_GET['token']; ?>'">Clear JavaScript Cache</a></li>
+                <li><a href="javascript:void(0)" onclick="document.location='index.php?route=tool/nitro/clearvqmodcache&token=<?php echo $_GET['token']; ?>'">Clear vQmod Cache</a></li>
+                <li style="border-top:1px dashed #888;"><a href="javascript:void(0)" onclick="document.location='index.php?route=tool/nitro/clearallcaches&token=<?php echo $_GET['token']; ?>'">Clear All Caches</a></li>
+              </ul>
+		        </li>
+         
+        </li>
+	<?php } ?>
+			]]></add>
+		</operation>
+	</file>
+</modification>

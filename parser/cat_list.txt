@@ -1,0 +1,159 @@
+﻿1;/catalog/novinki_lego_2015/;Новинки LEGO 2015
+2;/catalog/agents_2015/;Agents 2015
+3;/catalog/bionicle_2015/;Bionicle 2015
+4;/catalog/city_2015/;City 2015
+5;/catalog/classic_2015/;Classic 2015
+6;/catalog/creator_2015/;Creator 2015
+7;/catalog/disney_princesses_2015/;Disney Princesses 2015
+8;/catalog/duplo_2015/;Duplo 2015
+9;/catalog/elves_2015/;Elves 2015
+10;/catalog/friends_2015/;Friends 2015
+11;/catalog/juniors_2015/;Juniors 2015
+12;/catalog/legends_of_chima_2015/;Legends of Chima 2015
+13;/catalog/mixels_2015/;Mixels 2015
+14;/catalog/movie_2015/;Movie 2015
+15;/catalog/ninjago_2015/;Ninjago 2015
+16;/catalog/pirates_2015/;Pirates 2015
+17;/catalog/speed_champions_2015/;Speed Champions 2015
+18;/catalog/star_wars_2015/;Star Wars 2015
+19;/catalog/super_heroes_2015/;Super Heroes 2015
+20;/catalog/technic_2015/;Technic 2015
+21;/catalog/lego_classic/;Классик 
+22;/catalog/gorod_arktika/;Арктика
+23;/catalog/lego_juniors/;Джуниорс
+24;/catalog/bionikly/;Биониклы
+25;/catalog/gorod/;Город
+26;/catalog/duplo/;Дупло
+27;/catalog/duplo_pleyns/;Дупло Самолеты
+28;/catalog/duplo_tachki/;Дупло Тачки
+29;/catalog/zvezdnye_voyny/;Звездные войны
+30;/catalog/krieytor/;Криэйтор
+31;/catalog/legendy_chima/;Легенды Чимы
+32;/catalog/mayndstorms/;Майндстормс
+33;/catalog/mikseli/;Миксели
+34;/catalog/minifigurki_/;Минифигурки 
+35;/catalog/nindzyago/;Ниндзяго
+36;/catalog/podruzhki/;Подружки
+37;/catalog/printsessy_disney/;Принцессы Диснея
+38;/catalog/chempion/;Скоростные Чемпионы
+39;/catalog/super_geroi/;Супер Герои
+40;/catalog/tekhnik/;Техник
+41;/catalog/muvi/;Фильм
+42;/catalog/cherepashki_nindzya/;Черепашки ниндзя
+43;/catalog/elfy/;Эльфы
+44;/catalog/lyubimye_geroi_figures/;Любимые герои
+45;/catalog/mininabory/;Мини наборы
+46;/catalog/toys-figurki/;Фигурки
+47;/catalog/dinozavry/;Динозавры
+48;/catalog/domiki_i_zamki/;Домики и замки
+49;/catalog/minifigurki-igrovie/;Минифигурки
+50;/catalog/supergeroi_play_sets/;Супергерои
+51;/catalog/aksessuary_girls/;Аксессуары для девочек
+52;/catalog/star_wars_play_sets/;Звездные Войны
+53;/catalog/toys-oruzhie-i-snaryazhenie/;Оружие и снаряжение
+54;/catalog/toys-syuzhetno-rolevye-nabory/;Сюжетно-ролевые наборы
+55;/catalog/kukly_bratz/;Bratz
+56;/catalog/kukly_bratzillaz/;Bratzillaz
+57;/catalog/kukly_flutterbye_fairies_/;Flying Fairy
+58;/catalog/disney_fairies/;Disney Fairies
+59;/catalog/disney_princess/;Disney Princess
+60;/catalog/lalaloopsy_ponies/;Lalaloopsy Ponies
+61;/catalog/mininabory_dolls/;Мини наборы
+62;/catalog/aksessuary/;Одежда и аксессуары для кукол
+63;/catalog/aksessuary_disney_sophia/;Аксессуары Disney Sophia
+64;/catalog/aksessuary_dlya_kukol_lalaloopsy/;Аксессуары для кукол Lalaloopsy
+65;/catalog/aksessuary_dlya_kukol_moxie/;Аксессуары для кукол Moxie
+66;/catalog/aksessuary_dlya_kukol_zapf_creation/;Аксессуары для кукол Zapf Creation
+67;/catalog/kolyaski_dlya_kukol_zapf_creation_/;Коляски для кукол  Zapf Creation 
+68;/catalog/odezhda_dlya_kukol_zapf_creation/;Одежда для кукол Zapf Creation
+69;/catalog/kholodnoe_serdtse/;Холодное сердце
+70;/catalog/kukly_lalaloopsy/;Lalaloopsy
+71;/catalog/kukly_lala_oopsie/;Lala Oopsies
+72;/catalog/kukly_moxie/;Moxie
+73;/catalog/kukly_novi_star/;Novi Stars
+74;/catalog/kukly_zapf_creation/;Zapf Creation
+75;/catalog/baby_annabell/;Baby Annabell
+76;/catalog/baby_born/;Baby Born
+77;/catalog/chou_chou/;Chou Chou
+78;/catalog/mooshka/;Mooshka
+79;/catalog/doktor_plyusheva/;Доктор Плюшева
+80;/catalog/myagkie_kukly/;Мягкие куклы
+81;/catalog/kukly_sharlotta_zemlyanichka_/;Шарлотта Земляничка 
+82;/catalog/toys-avtotreki/;Автотреки
+83;/catalog/toys-zheleznye-dorogi/;Железные дороги
+84;/catalog/toys-kollektsionnye-mashinki/;Коллекционные машинки
+85;/catalog/modeli_gruzovykh_mashin/;Модели грузовых машин
+86;/catalog/modeli_mashin/;Модели машин
+87;/catalog/modeli_mototsiklov/;Модели мотоциклов
+88;/catalog/modeli_otechestvennykh_mashin/;Модели отечественных машин
+89;/catalog/nabory_mashinok/;Наборы машинок
+90;/catalog/letatelnye_apparaty/;Летательные аппараты
+91;/catalog/toys-mashinki-transformery/;Машинки трансформеры
+92;/catalog/toys-radioupravlyaemye-modeli/;Радиоуправляемые модели
+93;/catalog/toys-spetstekhnika/;Спецтехника 
+94;/catalog/plyushevye_medvedi/;Плюшевые медведи
+95;/catalog/domashnie_zveri/;Домашние животные
+96;/catalog/dikie_zveri/;Дикие звери
+97;/catalog/lyubimye_geroi/;Любимые герои
+98;/catalog/simvol_2015_goda/;Символ года
+99;/catalog/toys-igrushki-dlya-vanny/;Игрушки для ванны
+100;/catalog/toys-katalki-i-kachalki/;Каталки и качалки
+101;/catalog/toys-konstruktor-dlya-malyshey/;Конструктор для малышей
+102;/catalog/toys-mashinki-dlya-malyshey-1-3/;Машинки для малышей (1-3)
+103;/catalog/toys-mobili-i-podveski/;Мобили и подвески
+104;/catalog/toys-muzykalnye-igrushki/;Музыкальные игрушки
+105;/catalog/toys-razvivayushchie-igrushki/;Развивающие игрушки
+106;/catalog/plastilin_play_doh/;Пластилин
+107;/catalog/toys-3d-pazly/;3D пазлы
+108;/catalog/toys-aksessuary/;Аксессуары
+109;/catalog/toys-golovolomki/;Головоломки
+110;/catalog/toys-igry-dlya-malyshey/;Игры для малышей
+111;/catalog/toys-nabory-dlya-tvorchestva/;Наборы для творчества
+112;/catalog/toys-nastolnye-igry/;Настольные игры
+113;/catalog/toys-obuchayushchie-igrushki/;Обучающие игрушки
+114;/catalog/toys-syuzhetno-rolevye-igry/;Сюжетно-ролевые игры
+115;/catalog/toys-velosipedy-i-samokaty/;Велосипеды и самокаты
+116;/catalog/toys-gorki/;Горки 
+117;/catalog/toys-igrovye-domiki/;Игровые домики
+118;/catalog/toys-igrovye-kompleksy/;Игровые комплексы 
+119;/catalog/toys-igrovye-stoly/;Игровые столы
+120;/catalog/toys-sportivnyy-inventar/;Спортивный инвентарь
+121;/catalog/konstruktory_lego/;LEGO
+122;/catalog/lego_classic5782/;Lego Classic
+123;/catalog/lego_juniors4512/;Lego Juniors
+124;/catalog/lego_piraty8450/;Пираты
+125;/catalog/agenty1/;Агенты
+126;/catalog/arktika/;Арктика
+127;/catalog/lego-bionikly/;Биониклы
+128;/catalog/lego_gorod/;Город
+129;/catalog/lego_duplo/;Дупло
+130;/catalog/lego_duplo_samolety/;Дупло Самолеты
+131;/catalog/lego_duplo_tachki/;Дупло Тачки
+132;/catalog/lego-star-wars/;Звездные Войны
+133;/catalog/lego_krieytor/;Криэйтор
+134;/catalog/lego_legendy_chimy/;Легенды Чимы
+135;/catalog/lego_mayndstorms/;Майндстормс
+136;/catalog/lego-mixels/;Миксели
+137;/catalog/lego_minifigurki/;Минифигурки 
+138;/catalog/lego_nindzyago/;Ниндзяго
+139;/catalog/lego_podruzhki/;Подружки
+140;/catalog/lego_printsessy_disney/;Принцессы Дисней
+141;/catalog/lego-speed_champions/;Скоростные Чемпионы
+142;/catalog/lego-super-heroes/;Супер-герои
+143;/catalog/lego_tekhnik/;Техник
+144;/catalog/lego_film/;Фильм
+145;/catalog/lego_cherepashki_nindzya/;Черепашки ниндзя
+146;/catalog/lego-elves/;Эльфы
+147;/catalog/meccano/;MECCANO
+148;/catalog/konstruktory_ionix_/;Конструкторы Ionix 
+149;/catalog/konstruktory_lbx/;Конструкторы LBX
+150;/catalog/shchenyachiy_patrul_paw_patrol/;Щенячий Патруль (Paw Patrol)
+151;/catalog/kvadrotsikly/;Квадроциклы
+152;/catalog/mototsikly/;Мотоциклы
+153;/catalog/tritsikly/;Трициклы
+154;/catalog/elektromobili/;Электромобили
+155;/catalog/zapchasti_i_aksessuary/;Запчасти и аксессуары
+156;/catalog/toyru_rekomenduet/;TOY.RU рекомендует
+157;/catalog/igrushki_so_skidkoy/;Ликвидация товара
+158;/catalog/aktsiya_po_lego/;Акция по Lego
+159;/catalog/rasprodaza-diskont/;Дефект упаковки

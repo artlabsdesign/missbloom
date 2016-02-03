@@ -1,0 +1,8 @@
+/image/cache/*
+/system/cache/*
+/vqmod/vqcache/*
+.htaccess
+.htaccess.txt
+config.php
+/image/data/.tmb/*
+/image/data/.quarantine/*
